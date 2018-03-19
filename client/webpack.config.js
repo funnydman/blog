@@ -1,5 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
   entry: './index.js',
   output: {
@@ -18,6 +19,10 @@ module.exports = {
             fallback: 'style-loader',
             use: ['css-loader', 'less-loader']
             })
+        },
+        {
+            test: /\.(png|svg|jpg|gif|jpeg)$/,
+            use:['file-loader']
         }
     ]
     },
