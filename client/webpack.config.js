@@ -1,5 +1,5 @@
 var path = require('path');
-
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: './index.js',
   output: {
@@ -14,16 +14,15 @@ module.exports = {
       },
       {
             test: /\.less$/,
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            }, {
-                loader: "less-loader" // compiles Less to CSS
-            }]
+            use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'less-loader']
+            })
         }
     ]
-    }
-
+    },
+    plugins: [
+        new ExtractTextPlugin({filename:'main.bundle.css'})
+    ]
 
 };
