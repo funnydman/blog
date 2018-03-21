@@ -6,4 +6,6 @@ WORKDIR /source
 
 ADD . /source/
 
-RUN pip install django && pip install djangorestframework
+RUN pip install -r requirements.txt
+
+RUN apt-get update
