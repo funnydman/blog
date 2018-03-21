@@ -6,4 +6,13 @@ services:
     volumes:
       - .:/source
     ports:
-      - "8000:8000"
+      - 8000:8000
+    depends_on:
+      - database
+  database:
+    image: postgres:10.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=adminblog
+      - POSTGRES_PASSWORD=adminblog
+      - POSTGRES_DB=adminblog

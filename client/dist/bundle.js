@@ -133,7 +133,7 @@ eval("var homeController = __webpack_require__(/*! ./controllers/home.controller
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = \"<section data-ng-app=\\\"homeApp\\\" data-ng-controller=\\\"homeController\\\">\\n   <div class=\\\"\\\">\\n      <div data-ng-repeat=\\\"post in posts\\\" class=\\\"post\\\">\\n         <h3>Title</h3>\\n         <p>{{post.title}}</p>\\n         <h3>Context</h3>\\n         <p>{{post.context}}</p>\\n      </div>\\n   </div>\\n</section>\";\n\n//# sourceURL=webpack:///./app/components/home/home.tmp.html?");
+eval("module.exports = \"<section data-ng-app=\\\"homeApp\\\" data-ng-controller=\\\"homeController\\\" id=\\\"posts\\\">\\n      <div data-ng-repeat=\\\"post in posts\\\" class=\\\"post\\\">\\n         <h3>Title</h3>\\n         <p>{{post.title}}</p>\\n         <h3>Context</h3>\\n         <p>{{post.context}}</p>\\n      </div>\\n</section>\";\n\n//# sourceURL=webpack:///./app/components/home/home.tmp.html?");
 
 /***/ }),
 

@@ -6,4 +6,12 @@ WORKDIR /source
 
 ADD . /source/
 
-RUN pip install django && pip install djangorestframework
+RUN pip install -r requirements.txt
+
+COPY ./server/entrypoint.sh /source/server/entrypoint.sh
+
+RUN chmod +x /source/server/entrypoint.sh
+
+WORKDIR /source/server/
+
+RUN ./entrypoint.sh
