@@ -8,6 +8,7 @@ ADD . /source/
 
 RUN pip install -r requirements.txt
 
+
 COPY ./server/entrypoint.sh /source/server/entrypoint.sh
 
 RUN chmod +x /source/server/entrypoint.sh
