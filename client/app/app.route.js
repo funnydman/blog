@@ -18,6 +18,22 @@ function mainRouterProvider($stateProvider, $urlRouterProvider) {
             }
 
         })
+        .state('about', {
+            url: '/about',
+            views: {
+                'header': {
+                    template: require('./shared/header/header.tmp.html')
+                },
+                'content': {
+                    template: require('./components/about/about.tmp.html')
+                    // controller: 'aboutController'
+                },
+                'footer': {
+                    template: require('./shared/footer/footer.tmp.html')
+                }
+            }
+
+        })
 }
 
 module.exports = mainRouterProvider;
