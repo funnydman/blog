@@ -1,23 +1,23 @@
-function mainRouterProvider ($stateProvider, $urlRouterProvider) {
+function mainRouterProvider($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
         .state('home', {
-            url:'/',
-            template: require('./components/home/home.tmp.html'),
-            controller: 'homeController'
-        })
-        .state('blog', {
-            url:'/blog',
-            template: 'templates/home.html',
-            controller: 'blogController'
-        })
-        .state('about', {
-            url:'/about',
-            template: 'templates/home.html',
-            controller: 'aboutController'
-        })
+            url: '/',
+            views: {
+                'header': {
+                    template: require('./shared/header/header.tmp.html')
+                },
+                'content': {
+                    template: require('./components/home/home.tmp.html'),
+                    controller: 'homeController'
+                },
+                'footer': {
+                    template: require('./shared/footer/footer.tmp.html')
+                }
+            }
 
-};
+        })
+}
 
 module.exports = mainRouterProvider;

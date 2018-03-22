@@ -1,4 +1,5 @@
-//here we connect all dep
+//here we
+
 var mainRouterProvider = require('./app.route.js');
 require('./components/home/home.module.js');
 

@@ -1,6 +1,6 @@
 var homeController = require('./controllers/home.controller.js');
-//styles
 
+//styles
 require('./asserts/style.less');
 
 angular

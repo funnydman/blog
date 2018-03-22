@@ -111,11 +111,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+# just a prefix for urls
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+# from this paths we get static files
 STATICFILES_DIRS = [
 
     os.path.join(BASE_DIR, '../client/dist/')
 
 ]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
