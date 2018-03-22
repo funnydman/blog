@@ -1,5 +1,5 @@
 __pycache__
-client/node_modules
+node_modules
 client/dist/
 server/static/
 *.log

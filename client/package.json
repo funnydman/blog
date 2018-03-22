@@ -10,7 +10,9 @@
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
-    "style-loader": "^0.20.3"
+    "style-loader": "^0.20.3",
+    "bootstrap": "4.0.0",
+    "jquery": "3.3.1"
   },
   "devDependencies": {
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
