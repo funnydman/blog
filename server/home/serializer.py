@@ -1,9 +1,10 @@
 from rest_framework import serializers
-from .models import Post
+from home.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
+    author = serializers.StringRelatedField()
 
     class Meta:
         model = Post
-        fields = ('title', 'context', 'published_date')
+        fields = ('title', 'context', 'published_date', 'author')

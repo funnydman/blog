@@ -1,3 +1,5 @@
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
 from django.template.response import TemplateResponse
 from rest_framework import viewsets
 from home.serializer import PostSerializer

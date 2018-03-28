@@ -5,4 +5,4 @@ require('./asserts/style.less');
 
 angular
     .module('homeApp', [])
-    .controller('homeController', homeController)
+    .controller('homeController', homeController);
