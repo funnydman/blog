@@ -1,7 +1,10 @@
 __pycache__
+server/home/__pycache__/
 node_modules
 client/dist/
 server/static/
 *.log
 *.pyc
 *.sql
+.idea
+venv/

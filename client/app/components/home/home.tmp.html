@@ -8,14 +8,14 @@
                 </h1>
                 <!-- Blog Post -->
                 <div class="card mb-4" ng-repeat="post in posts">
-                    <img class="post-image" src="#">
+                    <img class="post-image" src="http://via.placeholder.com/350x150">
                     <div class="card-body">
                         <h2 class="card-title">{{post.title}}</h2>
                         <p class="card-text">{{post.context}}</p>
                         <a href="#" class="btn btn-primary">Read More &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted on January 1, 2017 by
+                        Posted on {{post.published_date}} by
                         <a href="#">USER</a>
                     </div>
                 </div>
@@ -35,6 +35,25 @@
 
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
+                <div class="container">
+
+                    <!--Form Signin-->
+                    <form class="form-signin">
+                        <h3 style="margin-top:40px" class="form-signin-heading">Please sign in</h3>
+                        <label for="inputEmail" class="sr-only">Email address</label>
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required
+                               autofocus>
+                        <label for="inputPassword" class="sr-only">Password</label>
+                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me"> Remember me
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+
+                </div>
 
                 <!-- Search Widget -->
                 <div class="card my-4">
