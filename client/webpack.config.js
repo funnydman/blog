@@ -29,6 +29,17 @@ module.exports = {
                         options: {outputPath: 'img/'}
                     }
                 ]
+            },
+            {
+                test: /\.js$/, // both .js and .jsx
+                loader: 'eslint-loader',
+                exclude: /node_modules/,
+                include: path.resolve(process.cwd(), 'src'),
+                enforce: 'pre',
+                options: {
+                    fix: true,
+                    quiet: true
+                }
             }
         ]
     },

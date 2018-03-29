@@ -3,5 +3,4 @@ function homeController($scope, $http) {
         $scope.posts = response.data;
     });
 }
-
 module.exports = homeController;
