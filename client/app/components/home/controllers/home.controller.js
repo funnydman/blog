@@ -1,6 +1,7 @@
-function homeController($scope, $http) {
-    $http.get('/api/posts').then(function (response) {
-        $scope.posts = response.data;
-    });
+function homeController ($scope, postService) {
+  postService.getAllPosts().then(function (posts) {
+    $scope.posts = posts
+  })
 }
-module.exports = homeController;
+
+module.exports = homeController

@@ -34,11 +34,10 @@ module.exports = {
                 test: /\.js$/, // both .js and .jsx
                 loader: 'eslint-loader',
                 exclude: /node_modules/,
-                include: path.resolve(process.cwd(), 'src'),
+                include: path.resolve(__dirname, 'app'),
                 enforce: 'pre',
                 options: {
-                    fix: true,
-                    quiet: true
+                    fix: false
                 }
             }
         ]
