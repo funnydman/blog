@@ -1,6 +1,6 @@
-var homeController = require('./controllers/home.controller.js');
-var homeDetailController = require('./controllers/home.detail.controller');
-var postService = require('./services/home.service');
+const homeController = require('./controllers/home.controller.js');
+const homeDetailController = require('./controllers/home.detail.controller');
+const postService = require('./services/home.service');
 // styles
 require('./asserts/style.less');
 

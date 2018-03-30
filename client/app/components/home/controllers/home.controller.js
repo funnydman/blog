@@ -1,7 +1,7 @@
-function homeController ($scope, postService) {
-  postService.getAllPosts().then(function (posts) {
-    $scope.posts = posts
-  })
+function homeController($scope, postService) {
+  postService.getAllPosts().then((posts) => {
+    $scope.posts = posts;
+  });
 }
 
-module.exports = homeController
+module.exports = homeController;

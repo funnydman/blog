@@ -37,7 +37,7 @@ module.exports = {
                 include: path.resolve(__dirname, 'app'),
                 enforce: 'pre',
                 options: {
-                    fix: false
+                    fix: true
                 }
             }
         ]
