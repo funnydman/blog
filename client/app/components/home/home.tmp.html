@@ -10,6 +10,7 @@
             <h2 class="card-title">{{post.title}}</h2>
             <p class="card-text">{{post.context | limitTo:120:0}}</p>
             <a ui-sref="post({postId:post.id})" class="btn btn-primary">Read More &rarr;</a>
+            <a ui-sref="#" class="btn btn-warning">Edit</a>
         </div>
         <div class="card-footer text-muted">
             Posted on {{post.published_date}} by
