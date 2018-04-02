@@ -4,6 +4,7 @@
 
 1. https://docs.docker.com/compose/install/#upgrading
 2. https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 #### Run docker-compose in the root of the project
 
 ```
@@ -19,7 +20,7 @@ docker exec -it web bash
 python manage.py createsuperuser
 ```
 
-### Install and collect static files with webpack in another tab
+#### Install and collect static files with webpack in another tab
 #### Run this commands in the directory `/client` 
 ```
 npm install
