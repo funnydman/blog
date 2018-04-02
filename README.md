@@ -2,7 +2,7 @@
 
 ### Install docker and docker-compose using official guide
 
-### Run docker-compose in the root of the project
+##### Run docker-compose in the root of the project
 
 ```
 docker-compose up --build
@@ -14,3 +14,4 @@ docker-compose up --build
 npm install; 
 npm run dev;
 ```
+Happy coding! :smile:
