@@ -1,5 +1,16 @@
-# LOCAL DEPLOYMENT WITH DOCKER
+## LOCAL DEPLOYMENT
 
-### Install docker and docker-compose using official guide [here](https://docs.docker.com/install/linux/docker-ce/ubuntu/) and [here](https://docs.docker.com/compose/install/#prerequisites) 
+### Install docker and docker-compose using official guide
 
-### run docker-compose by the command `docker-compose up --build` in the root of the project. 
+### Run docker-compose in the root of the project
+
+```
+docker-compose up --build
+```
+
+### Install and collect static files with webpack in another tab
+##### Run this commands in the directory `/client` 
+```
+npm install; 
+npm run dev;
+```
