@@ -1,4 +1,4 @@
-const postDetailController = require('./controllers/post.detail.controller');
+const postDetailController = require('./controllers/post.detail.controller.js');
 const postService = require('./services/post.service.js');
 
 angular

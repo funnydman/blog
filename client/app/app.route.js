@@ -10,6 +10,7 @@ function mainRouterProvider($stateProvider, $urlRouterProvider) {
         },
         sidebar: {
           template: require('./shared/sidebar/sidebar.tmp.html'),
+          controller: 'authController',
         },
       },
     })
