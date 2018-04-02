@@ -17,8 +17,8 @@ function mainRouterProvider($stateProvider, $urlRouterProvider) {
       url: '/post/:postId',
       views: {
         content: {
-          template: require('./components/home/home.detail.tmp.html'),
-          controller: 'homeDetailController',
+          template: require('./components/post/post.detail.tmp.html'),
+          controller: 'postDetailController',
         },
         sidebar: {
           template: require('./shared/sidebar/sidebar.tmp.html'),

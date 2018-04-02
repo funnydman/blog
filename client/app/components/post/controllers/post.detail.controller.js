@@ -1,4 +1,4 @@
-function homeDetailController($scope, $http, $stateParams, postService) {
+function postDetailController($scope, $http, $stateParams, postService) {
   $scope.id = $stateParams.postId;
 
   function getPostById(posts, postId) {
@@ -15,4 +15,4 @@ function homeDetailController($scope, $http, $stateParams, postService) {
   });
 }
 
-module.exports = homeDetailController;
+module.exports = postDetailController;
