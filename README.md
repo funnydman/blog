@@ -1,7 +1,9 @@
 ## LOCAL DEPLOYMENT
 
-### Install docker and docker-compose using official guide
+#### Install docker and docker-compose using official guide
 
+1. https://docs.docker.com/compose/install/#upgrading
+2. https://docs.docker.com/install/linux/docker-ce/ubuntu/
 #### Run docker-compose in the root of the project
 
 ```
