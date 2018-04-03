@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from home.models import Post
+from posts.models import Post
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -8,3 +8,4 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'title', 'context', 'published_date', 'author')
+        read_only_fields = ('id', 'published_date')

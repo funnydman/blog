@@ -21,7 +21,7 @@ python manage.py createsuperuser
 ```
 
 #### Install and collect static files with webpack in another tab
-#### Run this commands in the directory `/client` 
+##### Run this commands in the directory `/client` 
 ```
 npm install
 npm run dev
