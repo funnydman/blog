@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 PYTHON_INTERPRETER=$(which python3)
 APPLICATION_ADDRESS=0.0.0.0
 APPLICATION_PORT=8000
@@ -21,7 +23,7 @@ function run_dev_server {
 function main() {
     run_migrations
     collect_static
-#    run_dev_server
+    run_dev_server
 }
 
 main

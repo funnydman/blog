@@ -2,8 +2,12 @@ version: "3.1"
 services:
   web:
     container_name: web
-    build: .
-    command: python ./server/manage.py runserver 0.0.0.0:8000
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # относительно контейнера
+    working_dir: /source/server
+    entrypoint: bash entrypoint.sh
     volumes:
       - .:/source
     ports:
