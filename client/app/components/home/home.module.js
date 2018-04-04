@@ -1,7 +1,7 @@
 const homeController = require('./controllers/home.controller.js');
 
 // styles
-require('./asserts/style.less');
+require('./asserts/less/style.less');
 
 angular
   .module('homeApp', [])
