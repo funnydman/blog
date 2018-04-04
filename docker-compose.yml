@@ -1,6 +1,7 @@
 version: "3.1"
 services:
   web:
+    container_name: web
     build: .
     command: python ./server/manage.py runserver 0.0.0.0:8000
     volumes:
@@ -10,8 +11,8 @@ services:
     depends_on:
       - database
   database:
+    container_name: database
     image: postgres:10.1-alpine
-    restart: always
     environment:
       - POSTGRES_USER=adminblog
       - POSTGRES_PASSWORD=adminblog
