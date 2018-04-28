@@ -17,6 +17,7 @@ services:
   database:
     container_name: database
     image: postgres:10.1-alpine
+    # only for local development
     environment:
       - POSTGRES_USER=adminblog
       - POSTGRES_PASSWORD=adminblog
