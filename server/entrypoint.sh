@@ -4,7 +4,7 @@ set -e
 
 PYTHON_INTERPRETER=$(which python3)
 APPLICATION_ADDRESS=0.0.0.0
-APPLICATION_PORT=8000
+APPLICATION_PORT=8080
 
 function run_migrations {
     echo "Running database migrations."
