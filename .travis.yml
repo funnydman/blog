@@ -11,4 +11,4 @@ before_install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
   - docker-compose --version
-  - docker-compose up
+  - docker-compose --verbose up
