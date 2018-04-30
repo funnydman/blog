@@ -1,13 +1,14 @@
+sudo: required
+
 language: python
 python:
   - "3.6"
 
-install:
-  - sudo apt-get install -y linux-image-virtual kernel linux-image-extra-virtual
-  - curl -sSL https://get.docker.com/ | sudo sh
-  - sudo pip install docker-compose
+services:
+  - docker
   
-script:
-  - ls -lah
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+  - docker-compose --version
   - docker-compose up
-  - docker-compose ps
