@@ -8,20 +8,13 @@ BASE_DIR = os.path.dirname(
         )
     )
 )
-
+PROJECT_ROOT = os.path.dirname(BASE_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '9mxq#0nu(t9uysm)l+)ky#ew0s&rl#&xdub#*zs7a)ar!!@%d%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,13 +112,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # from this paths we get static files
 STATICFILES_DIRS = [
 
-    os.path.join(BASE_DIR, '../client/dist/')
+    os.path.join(PROJECT_ROOT, 'client/dist/')
 
 ]
 
 MEDIA_URL = '/media/'
 
 try:
-    from blog.local import *
+    from .local import *
 except ImportError:
     pass

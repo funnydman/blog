@@ -9,7 +9,7 @@ services:
     working_dir: /source/server
     entrypoint: bash entrypoint.sh
     environment:
-      - DJANGO_SETTINGS_MODULE=blog.settings.main
+      - DJANGO_SETTINGS_MODULE=blog.settings.dev
     volumes:
       - .:/source
     ports:
