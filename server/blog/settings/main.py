@@ -1,21 +1,18 @@
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(
-    os.path.dirname(
-        os.path.dirname(
-            os.path.abspath(__file__)
-        )
-    )
-)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '9mxq#0nu(t9uysm)l+)ky#ew0s&rl#&xdub#*zs7a)ar!!@%d%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -108,21 +105,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-# just a prefix for urls
 STATIC_URL = '/static/'
 
+# just a prefix for urls
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-#
-# # from this paths we get static files
+
+# from this paths we get static files
 STATICFILES_DIRS = [
 
-    os.path.join(BASE_DIR, '../client/dist')
+    os.path.join(BASE_DIR, '../../client/dist/')
 
 ]
 
 MEDIA_URL = '/media/'
 
 try:
-    from .local import *
+    from blog.local import *
 except ImportError:
     pass

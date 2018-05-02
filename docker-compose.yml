@@ -8,6 +8,8 @@ services:
     # относительно контейнера
     working_dir: /source/server
     entrypoint: bash entrypoint.sh
+    environment:
+      - DJANGO_SETTINGS_MODULE=blog.settings.main
     volumes:
       - .:/source
     ports:

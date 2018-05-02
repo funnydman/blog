@@ -9,4 +9,6 @@ WORKDIR $SOURCE_PATH
 
 RUN pip install -r requirements.txt
 
+COPY ./server/entrypoint.sh $SOURCE_PATH/server/entrypoint.sh
+
 RUN chmod +x $SOURCE_PATH/server/entrypoint.sh
