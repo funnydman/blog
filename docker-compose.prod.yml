@@ -1,24 +1,19 @@
 version: "3.1"
 services:
-  web:
-    container_name: web
+  web_prod:
+    container_name: web_prod
     build:
       context: .
       dockerfile: Dockerfile
     # относительно контейнера
     working_dir: /source/server
     entrypoint: bash entrypoint.sh
-    volumes:
-      - .:/source
-    ports:
-      - 8080:8080
     depends_on:
       - database
-  database:
-    container_name: database
+  database_prod:
+    container_name: database_prod
+    restart: always
     image: postgres:10.1-alpine
     # only for local development
-    environment:
-      - POSTGRES_USER=adminblog
-      - POSTGRES_PASSWORD=adminblog
-      - POSTGRES_DB=adminblog
+    env_file:
+      - deployment/prod.env
