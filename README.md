@@ -1,3 +1,4 @@
+![build status](https://travis-ci.org/FUNNYDMAN/blog.svg?branch=master)
 ## LOCAL DEPLOYMENT
 
 #### Install docker and docker-compose using official guide
