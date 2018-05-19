@@ -27,4 +27,4 @@ python manage.py createsuperuser
 npm install
 npm run dev
 ```
-Happy coding! :smile:
+Happy coding!
