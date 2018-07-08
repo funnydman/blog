@@ -1,9 +1,10 @@
-function authController($scope) {
-  $scope.send = function () {
-    console.log($scope.username);
+function authController($scope, $http) {
+    $scope.send = function () {
 
-    console.log($scope.password);
-  };
+        return $http.post('/sign-in').then(
+            response = response.data;
+    )
+    };
 }
 
 module.exports = authController;
