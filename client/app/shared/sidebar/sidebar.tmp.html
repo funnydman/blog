@@ -1,23 +1,26 @@
-<section class="sidebar" data-ng-app="sidebarApp" data-ng-controller="authController">
-<div class="add-post">
-    <a href="#" class="btn btn-danger">ADD POST</a>
-</div>
+<section class="sidebar" data-ng-app="sidebarApp"
+         data-ng-controller="authController">
 
     <div class="container">
         <!--Form Sign in-->
         <form class="form-signin" method="POST">
-            <h3 style="margin-top:40px" class="form-signin-heading">Please sign in</h3>
+            <h3 style="margin-top:40px" class="form-signin-heading">Please sign
+                in</h3>
             <label for="inputName" class="sr-only">Username</label>
-            <input type="text" id="inputName" class="form-control" placeholder="Username" required
+            <input type="text" id="inputName" class="form-control"
+                   placeholder="Username" required
                    autofocus ng-model="username">
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required ng-model="password">
+            <input type="password" id="inputPassword" class="form-control"
+                   placeholder="Password" required ng-model="password">
             <div class="checkbox">
                 <label>
                     <input type="checkbox" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="send()">Sign in</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit"
+                    ng-click="send()">Sign in
+            </button>
         </form>
     </div>
     <!-- Search Widget -->
@@ -25,7 +28,8 @@
         <h5 class="card-header">Search</h5>
         <div class="card-body">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control"
+                       placeholder="Search for...">
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button">Go!</button>
                 </span>
@@ -71,7 +75,8 @@
     <div class="card my-4">
         <h5 class="card-header">Side Widget</h5>
         <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature
+            You can put anything you want inside of these side widgets. They
+            are easy to use, and feature
             the new Bootstrap 4 card containers!
         </div>
     </div>

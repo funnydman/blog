@@ -1,5 +1,6 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -17,7 +18,16 @@ module.exports = {
                 test: /\.(less|css)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: ['css-loader', 'less-loader']
+                    use: [{
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true,
+                            sourceMap: true
+                        }
+                    },
+                        {
+                            loader: 'less-loader'
+                        }]
                 })
             },
             {
@@ -29,21 +39,18 @@ module.exports = {
                         options: {outputPath: 'img/'}
                     }
                 ]
-            },
-            {
-                test: /\.js$/, // both .js and .jsx
-                loader: 'eslint-loader',
-                exclude: /node_modules/,
-                include: path.resolve(__dirname, 'app'),
-                enforce: 'pre',
-                options: {
-                    fix: true
-                }
             }
         ]
     },
     plugins: [
         new ExtractTextPlugin({filename: 'main.bundle.css'})
-    ]
+
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [new UglifyJsPlugin({
+            include: /\.min\.js$/
+        })]
+    }
 
 };
