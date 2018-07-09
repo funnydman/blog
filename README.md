@@ -24,8 +24,11 @@ python manage.py createsuperuser
 ##### Run this commands in the directory `/client` 
 ```
 npm install
-npm run dev
+npm run start:dev
 ```
+Last command starts wepback dev server which allows you automatically reload web page when static files has changed.
+
+Site now available on http://localhost:8080/
 ## LOCAL DEPLOYMENT WITHOUT DOCKER
 ### create and activate virtual environment
 ```bash
