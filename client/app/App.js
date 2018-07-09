@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 class SayHello extends React.Component {
     render() {
-        return <h1>Hello, {this.props.name}</h1>;
+        return <h1>Hey, {this.props.name}</h1>;
     }
 }
 
