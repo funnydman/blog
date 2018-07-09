@@ -9,6 +9,15 @@ BASE_DIR = os.path.dirname(
         )
     )
 )
+PROJECT_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.dirname(
+                os.path.abspath(__file__)
+            )
+        )
+    )
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -72,7 +81,7 @@ DATABASES = {
         'NAME': os.environ.get('BLOG_DATABASE_NAME', 'adminblog'),
         'USER': os.environ.get('BLOG_DATABASE_USER', 'adminblog'),
         'PASSWORD': os.environ.get('BLOG_DATABASE_PASSWORD', 'adminblog'),
-        'HOST': 'database',
+        'HOST': 'localhost',
         'PORT': int(os.environ.get('BLOG_DATABASE_PORT', 5432))
     }
 }

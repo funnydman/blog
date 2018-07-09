@@ -39,11 +39,19 @@ module.exports = {
                         options: {outputPath: 'img/'}
                     }
                 ]
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
             }
         ]
     },
     plugins: [
-        new ExtractTextPlugin({filename: 'main.bundle.css'}),
+        new ExtractTextPlugin({filename: 'main.bundle.css'})
+        // new UglifyJsPlugin({sourceMap: true})
 
     ],
     optimization: {
@@ -51,6 +59,13 @@ module.exports = {
         minimizer: [new UglifyJsPlugin({
             include: /\.min\.js$/
         })]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 8080,
+        // allowedHosts: ['0.0.0.0'],
+        host: '0.0.0.0'
     }
 
 };

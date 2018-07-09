@@ -1,1 +1,1 @@
-from blog.settings.main import *
+from .main import *
