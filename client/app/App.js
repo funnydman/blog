@@ -1,12 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class SayHello extends React.Component {
-    render() {
-        return <h1>Hey, {this.props.name}</h1>;
-    }
+  render() {
+    return <h1>Hey, {this.props.name}</h1>;
+  }
 }
 
 ReactDOM.render(
-    <SayHello name='Igor'/>, document.getElementById('root')
+    <SayHello name='Igor'/>, document.getElementById('root'),
 );

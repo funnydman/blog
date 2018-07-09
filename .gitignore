@@ -109,7 +109,8 @@ venv.bak/
 
 # IDE
 .idea
+
 # PROJECT
-client/node_modules
 client/dist/
 server/static/
+**/node_modules/

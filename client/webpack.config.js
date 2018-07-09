@@ -42,18 +42,23 @@ module.exports = {
                 ]
             },
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
-            }
+                use: ['babel-loader']
+            },
+            // TODO: find good configuration eslint & react
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     use: ['eslint-loader']
+            //
+            // }
+
         ]
     },
     plugins: [
         new ExtractTextPlugin({filename: 'main.bundle.css'}),
         new webpack.HotModuleReplacementPlugin()
-        // new UglifyJsPlugin({sourceMap: true})
 
     ],
     optimization: {
@@ -69,10 +74,14 @@ module.exports = {
         port: 8080,
         hot: true,
         inline: true,
+        noInfo: true,
+        open: true,
+        watchContentBase: true,
         proxy: {
             '/': 'http://0.0.0.0:8000',
             secure: false,
-        }
+        },
+        clientLogLevel: 'none',
+        stats: 'errors-only'
     }
-
 };
