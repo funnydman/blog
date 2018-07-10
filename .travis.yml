@@ -10,9 +10,9 @@ before_script:
   - psql -c "CREATE DATABASE adminblog;
              CREATE USER adminblog WITH password 'adminblog';
              GRANT ALL ON DATABASE adminblog TO adminblog;
-             ALTER USER adminblog CREATEDB;" -U adminblog
+             ALTER USER adminblog CREATEDB;" -U postgres
 script:
   - tox
 
 after_success:
-  - echo Test passed
+  - echo tests passed
