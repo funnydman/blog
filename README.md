@@ -52,6 +52,11 @@ CREATE DATABASE adminblog;
 CREATE USER adminblog WITH password 'adminblog';
 GRANT ALL ON DATABASE adminblog TO adminblog;
 ```
+Allow user to create db for running django tests
+
+```
+ALTER USER adminblog CREATEDB;
+```
 DON'T use this credentials in production!
 
 ### set up django
