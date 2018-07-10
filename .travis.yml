@@ -1,0 +1,18 @@
+language: python
+python:
+  - "3.6"
+services: postgresql
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE adminblog;
+             CREATE USER adminblog WITH password 'adminblog';
+             GRANT ALL ON DATABASE adminblog TO adminblog;
+             ALTER USER adminblog CREATEDB;" -U adminblog
+script:
+  - tox
+
+after_success:
+  - echo Test passed
