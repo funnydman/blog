@@ -4,4 +4,4 @@ psycopg2==2.7.3.2
 flake8==3.5.0
 django-ckeditor
 fabric
-pytest
+tox
