@@ -7,10 +7,10 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - psql -c "CREATE DATABASE adminblog;
-             CREATE USER adminblog WITH password 'adminblog';
-             GRANT ALL ON DATABASE adminblog TO adminblog;
-             ALTER USER adminblog CREATEDB;" -U postgres
+  - psql -c "CREATE DATABASE adminblog; -U postgres
+  - psql -c "CREATE USER adminblog WITH password 'adminblog'; -U postgres
+  - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog; -U postgres
+  - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 script:
   - tox
 
