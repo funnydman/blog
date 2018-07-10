@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'ckeditor',
-    'userprofile',
+    'userprofiles',
     'home',
     'posts'
 ]
