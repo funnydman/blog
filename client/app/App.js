@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class SayHello extends React.Component {
-  render() {
-    return <h1>Hey, {this.props.name}</h1>;
-  }
-}
 
+const element = <h1>DATA</h1>;
 ReactDOM.render(
-    <SayHello name='Igor'/>, document.getElementById('root'),
+    element,
+    document.getElementById('root'),
 );
+
+
+
+

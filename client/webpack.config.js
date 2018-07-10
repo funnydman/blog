@@ -3,6 +3,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
+const WebpackDevServerHost = 'http://0.0.0.0:8000';
+
 module.exports = {
     entry: './index.js',
     output: {
@@ -35,7 +37,6 @@ module.exports = {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
                 use: [
                     {
-
                         loader: 'file-loader',
                         options: {outputPath: 'img/'}
                     }
@@ -68,17 +69,16 @@ module.exports = {
         })]
     },
     devServer: {
-        // contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, '../server/templates/index.html'),
         publicPath: '/static/',
         compress: true,
         port: 8080,
         hot: true,
         inline: true,
-        noInfo: true,
         open: true,
         watchContentBase: true,
         proxy: {
-            '/': 'http://0.0.0.0:8000',
+            '/': WebpackDevServerHost,
             secure: false,
         },
         clientLogLevel: 'none',
