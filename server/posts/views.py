@@ -1,6 +1,7 @@
 from rest_framework import viewsets
-from posts.serializers import PostSerializer
-from posts.models import Post
+
+from .models import Post
+from .serializers import PostSerializer
 
 
 class PostViewSet(viewsets.ModelViewSet):
