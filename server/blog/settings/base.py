@@ -1,5 +1,6 @@
 import os
 
+SECRET_KEY = 'fdsfsdfsdf'
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
     os.path.dirname(
@@ -8,13 +9,26 @@ BASE_DIR = os.path.dirname(
         )
     )
 )
-PROJECT_ROOT = os.path.dirname(BASE_DIR)
+PROJECT_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.dirname(
+            os.path.dirname(
+                os.path.abspath(__file__)
+            )
+        )
+    )
+)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
+# SECURITY WARNING: keep the secret key used in production secret!
 
-
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+ALLOWED_HOSTS = ['*']
 # Application definition
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -23,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'ckeditor',
+    'userprofiles',
     'home',
     'posts'
 ]
@@ -61,11 +77,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ.get('BLOG_DATABASE_NAME', 'adminblog'),
         'USER': os.environ.get('BLOG_DATABASE_USER', 'adminblog'),
         'PASSWORD': os.environ.get('BLOG_DATABASE_PASSWORD', 'adminblog'),
-        'HOST': 'database',
+        'HOST': 'localhost',
         'PORT': int(os.environ.get('BLOG_DATABASE_PORT', 5432))
     }
 }
@@ -104,21 +120,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
+# just a prefix for urls
 STATIC_URL = '/static/'
 
-# just a prefix for urls
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# from this paths we get static files
+#
+# # from this paths we get static files
 STATICFILES_DIRS = [
 
-    os.path.join(PROJECT_ROOT, 'client/dist/')
+    os.path.join(BASE_DIR, '../client/dist')
 
 ]
 
 MEDIA_URL = '/media/'
 
-try:
-    from .local import *
-except ImportError:
-    pass
+# Django rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication'
+    ]
+}

@@ -1,6 +1,3 @@
-require('angular');
-require('@uirouter/angularjs');
 require('bootstrap/dist/css/bootstrap.css');
-
-
-require('./app/app.module.js');
+require('./app/style.css');
+require('./app/App.js');

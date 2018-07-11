@@ -1,69 +1,18 @@
 <!doctype html>
-<html lang="en" data-ng-app="mainApp">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="../static/main.bundle.css">
 </head>
 <body>
-
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">BLOG FUNNYDMAN</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" ui-sref="home">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" ui-sref="about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a ui-sref="#" class="btn btn-success">Admin</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-                <div ui-view="content"></div>
-            </div>
-            <div class="col-md-4">
-                <div ui-view="sidebar"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website
-            2018</p>
-    </div>
-</footer>
-
+<h1>Hello World</h1>
+<div id="root"></div>
 
 <script src="../static/main.bundle.js"></script>
+
 </body>
 </html>
