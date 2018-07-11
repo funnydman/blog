@@ -26,6 +26,44 @@ python manage.py createsuperuser
 ##### Run this commands in the directory `/client` 
 ```
 npm install
-npm run dev
+npm run start:dev
 ```
-Happy coding! :smile:
+Last command starts wepback dev server which allows you automatically reload web page when static files has changed.
+
+Site now available on http://localhost:8080/
+## LOCAL DEPLOYMENT WITHOUT DOCKER
+### create and activate virtual environment
+```bash
+virtualenv --python=$(which python3) venv
+source venv/bin/activate
+```
+Install packages from requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
+### create database
+
+Sign in as postgres user
+```bash
+sudo -su postgres psql
+```
+Create db and user
+```
+CREATE DATABASE adminblog;
+CREATE USER adminblog WITH password 'adminblog';
+GRANT ALL ON DATABASE adminblog TO adminblog;
+```
+Allow user to create db for running django tests
+
+```
+ALTER USER adminblog CREATEDB;
+```
+DON'T use this credentials in production!
+
+### set up django
+Go to server directory and run entrypoint script
+```
+bash entrypoint.sh
+```
+Happy coding!
