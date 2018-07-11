@@ -13,7 +13,3 @@ before_script:
   - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 script:
   - tox
-  - coverage run --source=python server/manage.py test
-
-after_success:
-  - coveralls
