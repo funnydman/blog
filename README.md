@@ -7,6 +7,19 @@
 
 1. https://docs.docker.com/compose/install/#upgrading
 2. https://docs.docker.com/install/linux/docker-ce/ubuntu/
+#### Install and collect static files using webpack
+##### Install nodejs
+```
+sudo apt-get update
+sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+```
+##### Run this commands in the directory `blog/client` 
+```
+npm install
+npm run dev
+```
+Last command builds static files and automatically rebuild.
 
 #### Run docker-compose in the root of the project
 
@@ -23,15 +36,7 @@ docker exec -it web bash
 python manage.py createsuperuser
 ```
 
-#### Install and collect static files with webpack in another tab
-##### Run this commands in the directory `/client` 
-```
-npm install
-npm run start:dev
-```
-Last command starts wepback dev server which allows you automatically reload web page when static files has changed.
 
-Site now available on http://localhost:8080/
 ## LOCAL DEPLOYMENT WITHOUT DOCKER
 ### create and activate virtual environment
 ```bash
