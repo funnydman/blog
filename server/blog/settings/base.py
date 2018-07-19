@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': os.environ.get('BLOG_DATABASE_NAME', 'adminblog'),
         'USER': os.environ.get('BLOG_DATABASE_USER', 'adminblog'),
         'PASSWORD': os.environ.get('BLOG_DATABASE_PASSWORD', 'adminblog'),
-        'HOST': 'localhost',
+        'HOST': os.environ.get('POSTGRES_HOST', 'database'),
         'PORT': int(os.environ.get('BLOG_DATABASE_PORT', 5432))
     }
 }

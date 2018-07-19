@@ -24,3 +24,4 @@ services:
       - POSTGRES_USER=adminblog
       - POSTGRES_PASSWORD=adminblog
       - POSTGRES_DB=adminblog
+      - POSTGRES_HOST=database

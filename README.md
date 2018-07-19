@@ -1,5 +1,6 @@
 ![build status](https://travis-ci.org/FUNNYDMAN/blog.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/FUNNYDMAN/blog/badge.svg?branch=master)](https://coveralls.io/github/FUNNYDMAN/blog?branch=master)
+[![Requirements Status](https://requires.io/github/FUNNYDMAN/blog/requirements.svg?branch=master)](https://requires.io/github/FUNNYDMAN/blog/requirements/?branch=master)
 ## LOCAL DEPLOYMENT
 
 #### Install docker and docker-compose using official guide
