@@ -13,3 +13,5 @@ before_script:
   - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 script:
   - tox
+after_success:
+  - coveralls
