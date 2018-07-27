@@ -10,6 +10,7 @@ services:
     entrypoint: bash entrypoint.sh
     environment:
       - DJANGO_SETTINGS_MODULE=blog.settings.dev
+      - POSTGRES_HOST=database
     volumes:
       - .:/source
     ports:

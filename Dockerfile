@@ -1,4 +1,4 @@
-FROM python:3.5
+FROM python:3.6
 
 ENV SOURCE_PATH /source
 RUN mkdir $SOURCE_PATH
