@@ -53,7 +53,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,7 +76,7 @@ DATABASES = {
         'NAME': os.environ.get('BLOG_DATABASE_NAME', 'adminblog'),
         'USER': os.environ.get('BLOG_DATABASE_USER', 'adminblog'),
         'PASSWORD': os.environ.get('BLOG_DATABASE_PASSWORD', 'adminblog'),
-        'HOST': os.environ.get('POSTGRES_HOST', 'database'),
+        'HOST': os.environ.get('POSTGRES_HOST', 'localhost'),
         'PORT': int(os.environ.get('BLOG_DATABASE_PORT', 5432))
     }
 }
@@ -118,12 +118,12 @@ USE_TZ = True
 # just a prefix for urls
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 #
 # # from this paths we get static files
 STATICFILES_DIRS = [
 
-    os.path.join(BASE_DIR, '../client/dist')
+    os.path.join(PROJECT_DIR, 'client/dist')
 
 ]
 
