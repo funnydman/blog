@@ -6,5 +6,5 @@ from .models import Post
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ('id', 'title', 'context')
-        read_only_fields = ('id',)
+        fields = ('id', 'title', 'content', 'pub_date', 'last_modified')
+        read_only_fields = ('id', 'pub_date')
