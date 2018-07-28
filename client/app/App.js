@@ -1,8 +1,8 @@
 import React from 'react';
 import * as ReactDOM from "react-dom";
 import {BrowserRouter} from 'react-router-dom';
-import HeaderRouters from './Routes';
 import ErrorBoundary from './utils/errorBoundary';
+import HeaderRouters from "./Routes";
 
 class App extends React.Component {
     render() {

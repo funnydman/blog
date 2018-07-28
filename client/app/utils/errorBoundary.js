@@ -11,6 +11,7 @@ export default class ErrorBoundary extends React.Component {
         this.setState({hasError: true});
         // You can also log the error to an error reporting service
         // logErrorToMyService(error, info);
+        Raven.captureException(error, {extra: info});
     }
 
     render() {
