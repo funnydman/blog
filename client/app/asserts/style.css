@@ -1,0 +1,11 @@
+body {
+    background-color: #ccc !important;
+}
+
+.about-h1 {
+    padding-top: 100px;
+}
+
+.nav-item a.active {
+    background-color: blue !important;
+}
