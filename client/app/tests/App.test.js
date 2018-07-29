@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TestSome from "../tests/TestComponent";
+import "isomorphic-fetch"
+import App from '../App';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<TestSome/>, div);
+    ReactDOM.render(<App/>, div);
     ReactDOM.unmountComponentAtNode(div);
 });

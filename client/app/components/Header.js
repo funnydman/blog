@@ -14,10 +14,10 @@ class Header extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarResponsive">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item">
-                                    <Link to='/' className="nav-link" activeClassName="active">Home</Link>
+                                    <Link to='/' className="nav-link">Home</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link to='/about' className="nav-link" activeClassName="active">About</Link>
+                                    <Link to='/about' className="nav-link">About</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link to='/services' className="nav-link">Services</Link>
