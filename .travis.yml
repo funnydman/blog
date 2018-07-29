@@ -1,21 +1,20 @@
-language: python
+matrix:
+  include:
+  - language: python
+    services: postgresql
+    python: "3.6"
+    install:
+      - pip install -r requirements.txt
 
-python:
-- "3.6"
+    before_script:
+      - psql -c "CREATE DATABASE adminblog;" -U postgres
+      - psql -c "CREATE USER adminblog WITH password 'adminblog';" -U postgres
+      - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
+      - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 
-services: postgresql
+    script:
+      - tox
 
-install:
-- pip install -r requirements.txt
+    after_success:
+      - coveralls
 
-before_script:
-- psql -c "CREATE DATABASE adminblog;" -U postgres
-- psql -c "CREATE USER adminblog WITH password 'adminblog';" -U postgres
-- psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
-- psql -c "ALTER USER adminblog CREATEDB;" -U postgres
-
-script:
-- tox
-
-after_success:
-- coveralls
