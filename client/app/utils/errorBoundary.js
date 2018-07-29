@@ -17,7 +17,14 @@ export default class ErrorBoundary extends React.Component {
     render() {
         if (this.state.hasError) {
             // You can render any custom fallback UI
-            return <h1>Something went wrong.</h1>;
+            return (
+                <div
+                    className="snap"
+                    onClick={() => Raven.lastEventId() && Raven.showReportDialog()}>
+                    {/*<img src={oops}/>*/}
+                    <p>We're sorry — something's gone wrong.</p>
+                    <p>Our team has been notified, but click here fill out a report.</p>
+                </div>);
         }
         return this.props.children;
     }
