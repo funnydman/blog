@@ -1,8 +1,9 @@
 import React from "react";
-import getData from "Utils";
+import getData from "../utils/getData";
+import Post from "./Post";
 
 
-class Posts extends React.Component {
+export default class Posts extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,10 +39,7 @@ class Posts extends React.Component {
             return (
                 <div>
                     {posts.map(post => (
-                        <div key={post.id} id={post.id}>
-                            <h1>{post.title}</h1>
-                            <p>{post.content}</p>
-                        </div>
+                        <Post title={post.title} id={post.id} content={post.content}/>
 
                     ))}
                 </div>
@@ -50,5 +48,3 @@ class Posts extends React.Component {
         }
     }
 }
-
-export default Posts;

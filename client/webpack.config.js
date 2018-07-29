@@ -18,19 +18,10 @@ module.exports = {
                 use: ["html-loader"]
             },
             {
-                test: /\.(less|css)$/,
+                test: /\.(sass|css)$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [{
-                        loader: 'css-loader',
-                        options: {
-                            minimize: true,
-                            sourceMap: true
-                        }
-                    },
-                        {
-                            loader: 'less-loader'
-                        }]
+                    use: ['css-loader', 'sass-loader']
                 })
             },
             {
