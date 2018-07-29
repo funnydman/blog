@@ -25,6 +25,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "coveralls": "^3.0.2",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-loader": "^2.0.0",
@@ -44,7 +45,8 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
+    "test-cover": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "dev": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "start:dev": "webpack-dev-server"
