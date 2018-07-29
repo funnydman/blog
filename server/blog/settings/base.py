@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'raven.contrib.django.raven_compat',
     'rest_framework',
     'ckeditor',
+    'ckeditor_uploader',
     'userprofiles',
     'home',
     'posts'
@@ -131,6 +132,12 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
+
+CKEDITOR_UPLOAD_PATH = "media/"
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
 
 RAVEN_CONFIG = {
     'dsn': 'https://e5132c59a6c647bf9b5a1cfbcdefd4f3:8beed181bea944a0abc11fe88c0d7109@sentry.io/1251697',
