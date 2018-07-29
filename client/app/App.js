@@ -4,7 +4,7 @@ import {BrowserRouter} from 'react-router-dom';
 import ErrorBoundary from './utils/errorBoundary';
 import HeaderRouters from './Routes';
 
-class App extends React.Component {
+export default class App extends React.Component {
     render() {
         return (
             <HeaderRouters/>
