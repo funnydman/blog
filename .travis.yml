@@ -1,25 +1,26 @@
-matrix:
-  include:
-  - language: node_js
-    node_js: "8"
-    before_install: cd client
-    install: npm install
+language: python
 
-  - language: python
-    services: postgresql
-    python: "3.6"
-    install:
-      - pip install -r requirements.txt
+python:
+  - "3.6"
 
-    before_script:
-      - psql -c "CREATE DATABASE adminblog;" -U postgres
-      - psql -c "CREATE USER adminblog WITH password 'adminblog';" -U postgres
-      - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
-      - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
+services: postgresql
+
+before_install:
+  - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+  - sudo apt-get install -y nodejs
+
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c "CREATE DATABASE adminblog;" -U postgres
+  - psql -c "CREATE USER adminblog WITH password 'adminblog';" -U postgres
+  - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
+  - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 
 script:
   - tox
 
 after_success:
   - coveralls
-
