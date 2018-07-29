@@ -6,6 +6,7 @@ python:
 services: postgresql
 
 before_install:
+  - sudo apt-get update
   - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   - sudo apt-get install -y nodejs
 
@@ -18,6 +19,8 @@ before_script:
   - psql -c "CREATE USER adminblog WITH password 'adminblog';" -U postgres
   - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
   - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
+  - cd client
+  - npm install
 
 script:
   - tox
