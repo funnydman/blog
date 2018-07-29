@@ -1,5 +1,10 @@
 matrix:
   include:
+  - language: node_js
+    node_js: "8"
+    before_install: cd blog/client
+    install: npm install
+
   - language: python
     services: postgresql
     python: "3.6"
@@ -12,9 +17,9 @@ matrix:
       - psql -c "GRANT ALL ON DATABASE adminblog TO adminblog;" -U postgres
       - psql -c "ALTER USER adminblog CREATEDB;" -U postgres
 
-    script:
-      - tox
+script:
+  - tox
 
-    after_success:
-      - coveralls
+after_success:
+  - coveralls
 
