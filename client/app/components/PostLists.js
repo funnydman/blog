@@ -3,7 +3,7 @@ import getData from "../utils/getData";
 import Post from "./Post";
 
 
-export default class Posts extends React.Component {
+export default class PostLists extends React.Component {
     constructor(props) {
         super(props);
         this.state = {

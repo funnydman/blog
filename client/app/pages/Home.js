@@ -1,13 +1,13 @@
 import Header from '../components/Header';
 import * as React from "react";
-import Posts from '../components/Posts';
+import PostLists from '../components/PostLists';
 
 class Home extends React.Component {
     render() {
         return (
             <div>
                 <Header/>
-                <Posts/>
+                <PostLists/>
             </div>
         );
     }
