@@ -1,7 +1,7 @@
 import React from "react";
 import getData from "../../utils/getData";
 import Post from "./Post";
-
+import NoPosts from './NoPosts';
 
 export default class PostLists extends React.Component {
     constructor(props) {
@@ -35,7 +35,11 @@ export default class PostLists extends React.Component {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
-        } else {
+        }
+        else if (this.state.posts.length === 0) {
+            return (<NoPosts/>);
+        }
+        else {
             return (
                 <div className="posts-list">
                     {posts.map(post => (
