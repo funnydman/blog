@@ -1,4 +1,4 @@
-require('bootstrap/dist/css/bootstrap.css');
-require('./app/asserts/sass/main.sass');
-require('./app/Raven.js');
-require('./app/index.js');
+import 'bootstrap/dist/css/bootstrap.css';
+import './app/asserts/sass/main.sass';
+import './app/Raven.js';
+import './app/index.js';

@@ -38,8 +38,8 @@ module.exports = {
                 exclude: /node_modules/,
                 use: ['babel-loader']
             },
-            // TODO: find good configuration eslint & react
             // {
+            //     enforce: "pre",
             //     test: /\.js$/,
             //     exclude: /node_modules/,
             //     use: ['eslint-loader']
