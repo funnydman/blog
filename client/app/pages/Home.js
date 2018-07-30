@@ -1,16 +1,13 @@
-import Header from '../components/Header';
 import * as React from "react";
-import PostLists from '../components/PostLists';
-import Footer from "../components/Footer";
+import PageTemp from './PageTemp';
+import PostLists from "../components/PostLists";
 
 class Home extends React.Component {
     render() {
         return (
-            <div>
-                <Header/>
+            <PageTemp>
                 <PostLists/>
-                <Footer/>
-            </div>
+            </PageTemp>
         );
     }
 }

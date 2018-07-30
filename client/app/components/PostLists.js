@@ -37,7 +37,7 @@ export default class PostLists extends React.Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <div>
+                <div className="posts-list">
                     {posts.map(post => (
                         <Post title={post.title} id={post.id} content={post.content}/>
 
