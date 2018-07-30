@@ -1,9 +1,9 @@
 import * as React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Sidebar from "../components/Sidebar/Sidebar";
+import Header from "../components/common/Header";
+import Footer from "../components/common/Footer";
+import Sidebar from "../components/sidebar/Sidebar";
 
-function Page(props) {
+function Content(props) {
     return (
         <div className="col-md-8">
             {props.children}
@@ -17,9 +17,9 @@ export default function PageTemp(props) {
             <Header/>
             <div className="container">
                 <div className="row">
-                    <Page>
+                    <Content>
                         {props.children}
-                    </Page>
+                    </Content>
                     <Sidebar/>
                 </div>
             </div>
