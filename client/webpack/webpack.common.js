@@ -1,14 +1,12 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const webpack = require('webpack');
-
-const WebpackDevServerHost = 'http://0.0.0.0:8000';
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'main.bundle.js'
     },
     module: {
@@ -42,30 +40,8 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(['dist']),
         new ExtractTextPlugin({filename: 'main.bundle.css'}),
-        new webpack.HotModuleReplacementPlugin()
 
     ],
-    optimization: {
-        minimize: true,
-        minimizer: [new UglifyJsPlugin({
-            include: /\.min\.js$/
-        })]
-    },
-    devServer: {
-        contentBase: path.join(__dirname, '../server/templates/index.html'),
-        publicPath: '/static/',
-        compress: true,
-        port: 8080,
-        hot: true,
-        inline: true,
-        open: true,
-        watchContentBase: true,
-        proxy: {
-            '/': WebpackDevServerHost,
-            secure: false,
-        },
-        clientLogLevel: 'none',
-        stats: 'errors-only'
-    }
 };
