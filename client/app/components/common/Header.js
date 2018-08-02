@@ -7,7 +7,7 @@ class Header extends React.Component {
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div className="container">
-                        <a className="navbar-brand" href="#">BLOG FUNNYDMAN</a>
+                        <a className="navbar-brand" href="#">FANCY BLOG</a>
                         <button className="navbar-toggler" type="button">
                             <span className="navbar-toggler-icon"></span>
                         </button>
