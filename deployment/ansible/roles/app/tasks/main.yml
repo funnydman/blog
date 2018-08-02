@@ -27,10 +27,3 @@
     command: migrate
     virtualenv: "{{ ENV_PATH }}"
     app_path: "{{ PROJECT_DIR }}/server"
-
-# Create an initial superuser.
-- name: create superuser
-  django_manage:
-    command: "createsuperuser --noinput --username=admin --email=admin@example.com"
-    virtualenv: "{{ ENV_PATH }}"
-    app_path: "{{ PROJECT_DIR }}/server"

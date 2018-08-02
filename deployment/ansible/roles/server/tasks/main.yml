@@ -58,6 +58,6 @@
 
 - name: configure systemd for application
   become: yes
-  template: src=teleplata.service.j2 dest=/etc/systemd/system/teleplata.service
+  template: src=blog.service.j2 dest=/etc/systemd/system/blog.service
   notify:
-  - restart teleplata.service
+  - restart blog.service

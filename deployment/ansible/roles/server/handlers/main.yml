@@ -5,9 +5,9 @@
     name: nginx
     state: restarted
 
-- name: restart teleplata.service
+- name: restart blog.service
   become: yes
   systemd:
-    name: teleplata.service
+    name: blog.service
     state: restarted
     daemon_reload: yes
