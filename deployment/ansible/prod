@@ -1,0 +1,7 @@
+[webservers:vars]
+ansible_host=138.68.21.177
+ansible_user=blog
+ansible_python_interpreter=/usr/bin/python3
+
+[webservers]
+test.fancy-blog.com

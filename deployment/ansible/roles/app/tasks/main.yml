@@ -1,0 +1,9 @@
+- name: install common packages
+  become: yes
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - vim
+  - nginx
+  - postgresql
+  - postgresql-contrib
