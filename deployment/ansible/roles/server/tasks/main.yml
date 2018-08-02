@@ -1,0 +1,27 @@
+- name: Install packages for production enviroment
+  become: yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+  - nginx
+
+- name: copy nginx config
+  become: yes
+  template: src=nginx.j2 dest=/etc/nginx/sites-available/tele.conf
+  notify:
+  - restart nginx
+
+- name: create symlink
+  become: yes
+  file:
+    src: /etc/nginx/sites-available/tele.conf
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+
+
+- name: configure systemd for application
+  become: yes
+  template: src=teleplata.service.j2 dest=/etc/systemd/system/teleplata.service
+  notify:
+  - restart teleplata.service

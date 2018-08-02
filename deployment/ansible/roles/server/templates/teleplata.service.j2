@@ -1,0 +1,10 @@
+[Unit]
+Description=TeleplataService
+
+[Service]
+Type=idle
+ExecStart={{ ENV_PATH }}/bin/gunicorn blog.wsgi -b 0.0.0.0:8000 -w 4
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

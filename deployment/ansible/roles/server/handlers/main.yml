@@ -1,0 +1,13 @@
+---
+- name: restart nginx
+  become: yes
+  service:
+    name: nginx
+    state: restarted
+
+- name: restart teleplata.service
+  become: yes
+  systemd:
+    name: teleplata.service
+    state: restarted
+    daemon_reload: yes

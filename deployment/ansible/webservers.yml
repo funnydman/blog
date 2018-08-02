@@ -2,3 +2,5 @@
   gather_facts: no
   roles:
     - app
+    - server
+    - database

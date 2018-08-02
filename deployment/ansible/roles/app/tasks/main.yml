@@ -1,3 +1,10 @@
+- name: clone repository
+  git:
+    repo: '{{ REPO_URL }}'
+    dest: '{{ PROJECT_DIR }}'
+    depth: 1
+    update: no
+
 - name: Check that the /usr/bin/python3.6 exists
   stat:
     path: /usr/bin/python3.6
