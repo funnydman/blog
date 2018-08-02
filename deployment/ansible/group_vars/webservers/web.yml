@@ -1,7 +1,3 @@
-user: dzmitry
-
-#ENV: 'prod'
-
 REPO_URL: 'https://github.com/FUNNYDMAN/blog.git'
 PROJECT_NAME: 'blog'
 

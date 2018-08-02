@@ -16,3 +16,13 @@
   apt:
     name: nodejs
     state: present
+
+- name: Install node modules
+  npm:
+    path: "{{ PROJECT_DIR }}/client"
+
+- name: Create bundle with webpack
+  command: npm run build
+  args:
+    chdir: "{{ PROJECT_DIR }}/client"
+  tags: webpack
