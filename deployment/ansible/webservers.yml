@@ -2,7 +2,7 @@
   gather_facts: no
   roles:
     - create-new-user
-    - common
-    - client
-    - app
     - server
+    - common
+    - app
+    - client
