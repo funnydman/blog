@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import ErrorBoundary from './utils/errorBoundary';
-import HeaderRouters from './Routes';
+import {HeaderRouters, PostRouters} from './Routes';
 
 export default class App extends React.Component {
     render() {
@@ -9,6 +9,7 @@ export default class App extends React.Component {
             <BrowserRouter>
                 <ErrorBoundary>
                     <HeaderRouters/>
+                    <PostRouters/>
                 </ErrorBoundary>
             </BrowserRouter>
         );

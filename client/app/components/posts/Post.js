@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "react-router-dom";
 export default function Post(props) {
     return (
         <div className="post" id={props.id}>
@@ -9,9 +9,8 @@ export default function Post(props) {
                     <h2 className="card-title">{props.title}</h2>
                     <p className="card-text" dangerouslySetInnerHTML={{__html: props.content}}>
                     </p>
-                    <a
-                        className="btn btn-primary">Read
-                        More &rarr;</a>
+                    <Link className="btn btn-primary" to={`/post/${props.id}`}>Read
+                        More &rarr;</Link>
                 </div>
                 <div className="card-footer text-muted">
                     Posted on by

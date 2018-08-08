@@ -2,6 +2,6 @@ import React from "react";
 
 export default function PostDetail(props) {
     return (
-        <h1>SOme</h1>
+        <div>{props.match.params.postId}</div>
     );
 }
