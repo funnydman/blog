@@ -139,6 +139,12 @@ CKEDITOR_UPLOAD_PATH = "media/"
 
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    }
+}
+
 RAVEN_CONFIG = {
     'dsn': 'https://e5132c59a6c647bf9b5a1cfbcdefd4f3:8beed181bea944a0abc11fe88c0d7109@sentry.io/1251697',
     # If you are using git, you can also automatically configure the

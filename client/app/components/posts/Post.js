@@ -1,5 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+
+function truncateHtml(content) {
+    return content.substring(0, 1000);
+}
+
 export default function Post(props) {
     return (
         <div className="post" id={props.id}>
@@ -7,7 +12,7 @@ export default function Post(props) {
 
                 <div className="card-body">
                     <h2 className="card-title">{props.title}</h2>
-                    <p className="card-text" dangerouslySetInnerHTML={{__html: props.content}}>
+                    <p className="card-text" dangerouslySetInnerHTML={{__html: truncateHtml(props.content)}}>
                     </p>
                     <Link className="btn btn-primary" to={`/post/${props.id}`}>Read
                         More &rarr;</Link>
