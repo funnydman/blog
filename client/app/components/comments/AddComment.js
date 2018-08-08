@@ -35,9 +35,9 @@ export default class AddComment extends React.Component {
     }
     render () {
         return (
-            <form onSubmit={this.onSubmit} method="POST">
+            <form className="add-comment" onSubmit={this.onSubmit} method="POST">
                 <p><textarea name="content" onChange={this.handleInput}/></p>
-                <p><input type="submit" value="Add" /></p>
+                <p><input className="btn btn-primary" type="submit" value="Add" /></p>
             </form>
         );
     }
