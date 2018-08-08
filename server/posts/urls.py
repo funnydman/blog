@@ -3,10 +3,11 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework import routers
 from django.views.generic import TemplateView
-from .views import PostViewSet
+from .views import PostViewSet, CommentViewSet
 
 router = routers.DefaultRouter()
 router.register(r'api/posts', PostViewSet)
+router.register(r'api/comments', CommentViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

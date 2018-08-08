@@ -20,7 +20,7 @@ export default function PostDetail(props) {
             </div>
             <div>
                 <h3>Comments</h3>
-               <CommentsList comments={props.comments}/>
+               <CommentsList comments={props.comments} post={props.id}/>
             </div>
         </div>
     );
