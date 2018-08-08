@@ -1,5 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import Comment from "../comments/Comment";
+import CommentsList from "../comments/CommentsList";
 
 export default function PostDetail(props) {
     return (
@@ -18,10 +20,7 @@ export default function PostDetail(props) {
             </div>
             <div>
                 <h3>Comments</h3>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Dignissimos laudantium non sint voluptatum!</p>
-                <p>Cumque esse labore officia sit?</p>
-                <p>Ab dicta fuga tempora tenetur.</p>
+               <CommentsList comments={props.comments}/>
             </div>
         </div>
     );

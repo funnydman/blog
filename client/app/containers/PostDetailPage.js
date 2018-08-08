@@ -9,13 +9,13 @@ export default class PostDetailPage extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            postId: props.match.params.postId,
             post: []
         };
+        this.postId = props.match.params.postId;
     }
 
     componentDidMount() {
-        getPostDetail(this.state.postId).then((data) => {
+        getPostDetail(this.postId).then((data) => {
                 this.setState({
                     isLoaded: true,
                     post: data
@@ -34,7 +34,7 @@ export default class PostDetailPage extends React.Component {
         const {post} = this.state;
             return (
                 <PageTemp>
-                    <PostDetail title={post.title} id={post.id} content={post.content} key={post.id}/>
+                    <PostDetail title={post.title} id={post.id} content={post.content} comments={post.comments} key={post.id}/>
                 </PageTemp>
 
             );
