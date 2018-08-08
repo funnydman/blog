@@ -2,7 +2,7 @@ import {Route, Switch} from "react-router-dom";
 import Home from "./containers/Home";
 import About from "./containers/About";
 import React from "react";
-import PostDetail from "./components/posts/PostDetail";
+import PostDetailPage from "./containers/PostDetailPage";
 
 export const HeaderRouters = () => (
     <Switch>
@@ -14,6 +14,6 @@ export const HeaderRouters = () => (
 
 export const PostRouters = () => (
     <Switch>
-        <Route path='/post/:postId' component={PostDetail}/>
+        <Route path='/post/:postId' component={PostDetailPage}/>
     </Switch>
 );

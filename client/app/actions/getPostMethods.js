@@ -1,9 +1,9 @@
 import getFetchData from "../utils/getFetchData";
 
 export function getPostLists() {
-    return getFetchData('api/posts')
+    return getFetchData('/api/posts');
 }
 
 export function getPostDetail(id) {
-    return getFetchData(`api/posts/${id}`)
+    return getFetchData(`/api/posts/${id}`);
 }

@@ -1,22 +1,24 @@
-import React from "react";
-import Post from "./Post";
-import NoPosts from './NoPosts';
-import {getPostLists} from '../../actions/getPostMethods';
-export default class PostLists extends React.Component {
+import * as React from "react";
+import PageTemp from './PageTemp';
+import PostDetail from "../components/posts/PostDetail";
+import {getPostDetail} from "../actions/getPostMethods";
+
+export default class PostDetailPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
-            posts: []
+            postId: props.match.params.postId,
+            post: []
         };
     }
 
     componentDidMount() {
-        getPostLists().then((data) => {
+        getPostDetail(this.state.postId).then((data) => {
                 this.setState({
                     isLoaded: true,
-                    posts: data
+                    post: data
                 });
             },
             (error) => {
@@ -29,23 +31,17 @@ export default class PostLists extends React.Component {
     }
 
     render() {
-        const {error, isLoaded, posts} = this.state;
+        const {error, isLoaded, post} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         }
-        else if (this.state.posts.length === 0) {
-            return (<NoPosts/>);
-        }
         else {
             return (
-                <div className="posts-list">
-                    {posts.map(post => (
-                        <Post id={post.id} title={post.title} content={post.content} key={post.id}/>
-
-                    ))}
-                </div>
+                <PageTemp>
+                    <PostDetail title={post.title} id={post.id} content={post.content} key={post.id}/>
+                </PageTemp>
 
             );
         }
