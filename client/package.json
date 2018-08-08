@@ -45,7 +45,6 @@
   },
   "scripts": {
     "test": "jest --coverage",
-    "test-cover": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "build": "webpack --config webpack/webpack.prod.js",
     "start": "webpack-dev-server --open --config webpack/webpack.dev.js"
   },
