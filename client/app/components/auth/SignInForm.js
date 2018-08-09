@@ -1,5 +1,5 @@
 import * as React from "react";
-import Link from "react-router-dom/es/Link";
+import {Link} from "react-router-dom";
 
 function getUser(user) {
     return fetch('/api/login', {
