@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "react-router-dom/es/Link";
 
 function getUser(user) {
     return fetch('/api/login', {
@@ -20,18 +21,20 @@ export default class SignInForm extends React.Component {
         };
         this.onSubmit = this.onSubmit.bind(this);
     }
+
     onSubmit(event) {
         event.preventDefault();
         const user = {
-         username:this.state.username,
-         password:this.state.password
+            username: this.state.username,
+            password: this.state.password
         };
         getUser(user).then(data => {
             console.log(data);
         });
 
     }
-    render () {
+
+    render() {
         return (
             <form method="POST" className="form-signin" onSubmit={this.onSubmit}>
                 <h3 className="form-signin-heading">Please sign in</h3>
@@ -46,14 +49,16 @@ export default class SignInForm extends React.Component {
                 <input onChange={e => this.setState({password: e.target.value})} type="password" id="inputPassword"
                        className="form-control"
                        placeholder="Password" required/>
-                <div className="checkbox">
+                <div className="options">
+
                     <label>
                         <input type="checkbox" value="remember-me"/>
                         Remember me
                     </label>
+                    <Link to='/signup'>register</Link>
                 </div>
                 <input className="btn btn-lg btn-primary btn-block"
-                        type="submit" value="Sign in" />
+                       type="submit" value="Sign in"/>
             </form>
         );
     }
