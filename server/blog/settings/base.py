@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'userprofiles',
     'home',
+    'comments',
     'posts'
 ]
 
