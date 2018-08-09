@@ -1,3 +1,8 @@
+# fancy blog
+> Simple and powerful blog written in django and react
+
+<p align="center"><img src="https://preview.ibb.co/ercoFe/djangoreact.jpg" alt="djangoreact" border="0" width="100%"></p>
+
 ![build status](https://travis-ci.org/FUNNYDMAN/blog.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/FUNNYDMAN/blog/badge.svg?branch=master)](https://coveralls.io/github/FUNNYDMAN/blog?branch=master)
 [![Requirements Status](https://requires.io/github/FUNNYDMAN/blog/requirements.svg?branch=master)](https://requires.io/github/FUNNYDMAN/blog/requirements/?branch=master)
