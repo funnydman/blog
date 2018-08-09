@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 
 export default class AddComment extends React.Component {
     constructor(props) {
@@ -24,9 +24,10 @@ export default class AddComment extends React.Component {
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
             }
-        }).then(response => (response.json())).then(data =>(
-            console.log(data)
-        ));
+        }).then(function (response) {
+            console.log(response.status);
+        });
+
     }
     handleInput(event) {
         this.setState({
@@ -35,10 +36,13 @@ export default class AddComment extends React.Component {
     }
     render () {
         return (
-            <form className="add-comment" onSubmit={this.onSubmit} method="POST">
-                <p><textarea name="content" onChange={this.handleInput}/></p>
-                <p><input className="btn btn-primary" type="submit" value="Add" /></p>
-            </form>
+            <Fragment>
+                <form className="add-comment" onSubmit={this.onSubmit} method="POST">
+                    <p><textarea name="content" onChange={this.handleInput}/></p>
+                    <p><input className="btn btn-primary" type="submit" value="Add"/></p>
+                </form>
+            </Fragment>
+
         );
     }
 }
