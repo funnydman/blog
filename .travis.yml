@@ -7,7 +7,7 @@ matrix:
       node_js: "8"
       before_install: cd client
       install: npm install
-      script: npm run test-cover
+      script: npm run test
 
     - language: python
       python: "3.6"
