@@ -1,12 +1,26 @@
 import {Route, Switch} from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import Home from "./containers/Home";
+import About from "./containers/About";
 import React from "react";
+import PostDetailPage from "./containers/PostDetailPage";
+import SignUpPage from "./containers/SignUpPage";
 
-const HeaderRouters = () => (
+export const HeaderRouters = () => (
     <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/about' component={About}/>
     </Switch>
 );
-export default HeaderRouters;
+
+
+export const PostRouters = () => (
+    <Switch>
+        <Route path='/post/:postId' component={PostDetailPage}/>
+    </Switch>
+);
+
+export const AuthRouters = () => (
+    <Switch>
+        <Route path='/signup' component={SignUpPage}/>
+    </Switch>
+);

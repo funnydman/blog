@@ -1,0 +1,17 @@
+REPO_URL: 'https://github.com/FUNNYDMAN/blog.git'
+PROJECT_NAME: 'blog'
+
+USERNAME: 'blog'
+hashed_password: blZON6lM94M2M
+
+
+USER_HOMEDIR: '/home/{{ USERNAME }}'
+PROJECT_DIR: '{{ USER_HOMEDIR }}/{{ PROJECT_NAME }}'
+ENV_PATH: '{{ PROJECT_DIR }}/venv'
+
+
+DATABASE_NAME: 'adminblog'
+DATABASE_USER: 'adminblog'
+DATABASE_PASSWORD: 'adminblog'
+DATABASE_HOST: 'localhost'
+DATABASE_POST: 5432

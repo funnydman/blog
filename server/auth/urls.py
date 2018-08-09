@@ -1,7 +1,9 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from . import views
 
 urlpatterns = [
-    path('sign-in', views.sign_in, name='sign_in')
+    path('api/login', views.login, name='login'),
+    path('signup', TemplateView.as_view(template_name='index.html'))
 ]

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'raven.contrib.django.raven_compat',
     'rest_framework',
+    'rest_framework.authtoken',
     'ckeditor',
     'ckeditor_uploader',
     'userprofiles',
@@ -139,6 +140,12 @@ CKEDITOR_UPLOAD_PATH = "media/"
 
 CKEDITOR_BROWSE_SHOW_DIRS = True
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+    }
+}
+
 RAVEN_CONFIG = {
     'dsn': 'https://e5132c59a6c647bf9b5a1cfbcdefd4f3:8beed181bea944a0abc11fe88c0d7109@sentry.io/1251697',
     # If you are using git, you can also automatically configure the
@@ -148,7 +155,9 @@ RAVEN_CONFIG = {
 
 # Django rest framework
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication'
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',)
 }

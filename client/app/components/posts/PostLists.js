@@ -1,8 +1,7 @@
 import React from "react";
-import getData from "../../utils/getData";
 import Post from "./Post";
 import NoPosts from './NoPosts';
-
+import {getPostLists} from '../../actions/getPostMethods';
 export default class PostLists extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +13,7 @@ export default class PostLists extends React.Component {
     }
 
     componentDidMount() {
-        getData('api/posts').then((data) => {
+        getPostLists().then((data) => {
                 this.setState({
                     isLoaded: true,
                     posts: data
@@ -43,7 +42,7 @@ export default class PostLists extends React.Component {
             return (
                 <div className="posts-list">
                     {posts.map(post => (
-                        <Post title={post.title} id={post.id} content={post.content}/>
+                        <Post id={post.id} title={post.title} content={post.content} key={post.id}/>
 
                     ))}
                 </div>

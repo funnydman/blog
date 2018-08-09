@@ -1,0 +1,29 @@
+- name: clone repository
+  git:
+    repo: '{{ REPO_URL }}'
+    dest: '{{ PROJECT_DIR }}'
+    force: yes
+
+- name: install pip requirements
+  pip:
+    requirements: "{{ PROJECT_DIR }}/requirements.txt"
+    virtualenv: "{{ ENV_PATH }}"
+    virtualenv_python: python3.6
+
+- name: Run tests
+  django_manage:
+    command: test
+    virtualenv: "{{ ENV_PATH }}"
+    app_path: "{{ PROJECT_DIR }}/server"
+
+- name: collectstatic files
+  django_manage:
+    command: collectstatic
+    virtualenv: "{{ ENV_PATH }}"
+    app_path: "{{ PROJECT_DIR }}/server"
+
+- name: migrate
+  django_manage:
+    command: migrate
+    virtualenv: "{{ ENV_PATH }}"
+    app_path: "{{ PROJECT_DIR }}/server"

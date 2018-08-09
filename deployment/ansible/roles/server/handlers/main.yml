@@ -1,0 +1,13 @@
+---
+- name: restart nginx
+  become: yes
+  service:
+    name: nginx
+    state: restarted
+
+- name: restart blog.service
+  become: yes
+  systemd:
+    name: blog.service
+    state: restarted
+    daemon_reload: yes
