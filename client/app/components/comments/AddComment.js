@@ -1,4 +1,5 @@
 import React, {Fragment} from "react";
+import {postFetchData} from "../../utils/getFetchData";
 
 export default class AddComment extends React.Component {
     constructor(props) {
@@ -19,15 +20,8 @@ export default class AddComment extends React.Component {
             content: this.state.content,
             post: this.post
         };
-        fetch('/api/comments/', {
-            method: 'POST',
-            body: JSON.stringify(comment),
-            // Todo pass real token
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "Authorization": "Token token_string"
-            }
-        }).then(function (response) {
+            postFetchData('/api/comments/', comment)
+                .then(function (response) {
             console.log(response.status);
         });
 

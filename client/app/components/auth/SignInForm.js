@@ -1,14 +1,9 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
+import {postFetchData} from "../../utils/getFetchData";
 
 function getUser(user) {
-    return fetch('/api/login', {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        }
-    }).then(response => response.json());
+    return postFetchData('/api/login', user);
 }
 
 

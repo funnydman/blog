@@ -1,4 +1,5 @@
 import * as React from "react";
+import {postFetchData} from "../../utils/getFetchData";
 
 export default class SignUpForm extends React.Component {
     constructor(props) {
@@ -7,36 +8,39 @@ export default class SignUpForm extends React.Component {
             username: '',
             email: '',
             location: '',
-            password: ''
+            password: '',
+            passwordAgain:'',
+            error:''
         };
         this.onSubmit = this.onSubmit.bind(this);
     }
 
     onSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
         const state = this.state;
         const newUser = {
             username: state.username,
             email: state.email,
             location: state.location,
-            password: state.password
+            password: state.password,
+            passwordAgain: state.passwordAgain
+
         };
-        fetch('/api/users', {
-            method: "POST",
-            body: JSON.stringify(newUser),
-            headers: {
-                "Content-Type": "application/json; charset=utf-8",
-            }
-        }).then(function (response) {
-            console.log('New user created', response.status);
+        // TODO func.bind(this)?
+        let that = this;
+        postFetchData('/api/users', newUser).then(function (response) {
+            console.log('New user created', response);
+            that.setState({
+                error:response.error
+            });
         });
     }
 
     render() {
+        const error = this.state.error;
         return (
-            <form method="POST" onSubmit={this.onSubmit}>
-                <h3 className="form-signin-heading">Sign Up</h3>
+            <form method="POST" onSubmit={this.onSubmit} className="form-signup">
+                <h3 className="form-signup-heading">Sign Up</h3>
                 <label htmlFor="inputNameSignup"
                        className="sr-only">Username</label>
                 <input type="text" id="inputNameSignup"
@@ -71,6 +75,14 @@ export default class SignUpForm extends React.Component {
                        className="form-control"
                        placeholder="Password" required/>
 
+                <label htmlFor="inputPasswordSignUpAgain"
+                       className="sr-only">Password</label>
+                <input onChange={e => this.setState(
+                    {passwordAgain: e.target.value})} type="password"
+                       id="inputPasswordSignUpAgain"
+                       className="form-control"
+                       placeholder="Password Again" required/>
+                <p className="form-error-list">{error}</p>
                 <input className="btn btn-lg btn-primary btn-block"
                        type="submit" value="Sign up "/>
             </form>
