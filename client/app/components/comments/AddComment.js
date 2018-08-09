@@ -10,31 +10,36 @@ export default class AddComment extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
+
     onSubmit(event) {
         event.preventDefault();
         const comment = {
             // Todo: send real author name
-          author:3,
-          content:this.state.content,
-          post:this.post
+            author: 3,
+            content: this.state.content,
+            post: this.post
         };
         fetch('/api/comments/', {
-            method:'POST',
+            method: 'POST',
             body: JSON.stringify(comment),
+            // Todo pass real token
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
+                "Authorization": "Token token_string"
             }
         }).then(function (response) {
             console.log(response.status);
         });
 
     }
+
     handleInput(event) {
         this.setState({
-           content: event.target.value
+            content: event.target.value
         });
     }
-    render () {
+
+    render() {
         return (
             <Fragment>
                 <form className="add-comment" onSubmit={this.onSubmit} method="POST">
