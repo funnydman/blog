@@ -17,8 +17,13 @@ export default function Post(props) {
                     <Link className="btn btn-primary" to={`/post/${props.id}`}>Read
                         More &rarr;</Link>
                 </div>
+                <div className="categories">
+                    {props.categories.map(category => (
+                        <span className="category">{category}</span>
+                    ))}
+                </div>
                 <div className="card-footer text-muted">
-                    Posted on by
+                    Posted on by <span>{props.lastModified}</span>
                     <a href="#">Lorem</a>
                 </div>
             </div>

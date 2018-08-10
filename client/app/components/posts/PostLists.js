@@ -2,6 +2,7 @@ import React from "react";
 import Post from "./Post";
 import NoPosts from './NoPosts';
 import {getPostLists} from '../../actions/getPostMethods';
+
 export default class PostLists extends React.Component {
     constructor(props) {
         super(props);
@@ -38,11 +39,14 @@ export default class PostLists extends React.Component {
         else if (this.state.posts.length === 0) {
             return (<NoPosts/>);
         }
+
         else {
             return (
                 <div className="posts-list">
                     {posts.map(post => (
-                        <Post id={post.id} title={post.title} content={post.content} key={post.id}/>
+                        <Post id={post.id} title={post.title} content={post.content} categories={post.categories}
+                              lastModified={post.last_modified}
+                              key={post.id}/>
 
                     ))}
                 </div>

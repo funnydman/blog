@@ -15,7 +15,7 @@ class Category(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=250, blank=False, unique_for_date="pub_date")
     content = RichTextUploadingField()
-    category = models.ManyToManyField(Category)
+    categories = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
 

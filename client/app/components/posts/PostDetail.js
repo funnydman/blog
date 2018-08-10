@@ -1,6 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Comment from "../comments/Comment";
 import CommentsList from "../comments/CommentsList";
 
 export default function PostDetail(props) {
@@ -20,7 +18,7 @@ export default function PostDetail(props) {
             </div>
             <div>
                 <h3>Comments</h3>
-               <CommentsList comments={props.comments} post={props.id}/>
+                <CommentsList comments={props.comments} post={props.id}/>
             </div>
         </div>
     );
