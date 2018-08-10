@@ -18,6 +18,10 @@ class Post(models.Model):
     categories = models.ManyToManyField(Category)
     pub_date = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
+    is_published = models.BooleanField(default=True)
+
+    def get_categories(self):
+        return "\n".join([c.name for c in self.categories.all()])
 
     def __str__(self):
         return self.title

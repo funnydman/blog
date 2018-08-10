@@ -18,9 +18,11 @@ export default function Post(props) {
                         More &rarr;</Link>
                 </div>
                 <div className="categories">
-                    {props.categories.map(category => (
-                        <span className="category">{category}</span>
-                    ))}
+                    <p>Categories:
+                        {props.categories.map(category => (
+                            <span className="category">{category}</span>
+                        ))}
+                    </p>
                 </div>
                 <div className="card-footer text-muted">
                     Posted on by <span>{props.lastModified}</span>
