@@ -6,6 +6,12 @@ function getUser(user) {
     return postFetchData('/api/login', user);
 }
 
+// Only temp solution!
+function setToken(user) {
+    getUser(user).then(data => (
+        window.sessionStorage.setItem('token', data.token)
+    ))
+}
 
 export default class SignInForm extends React.Component {
     constructor(props) {
@@ -23,9 +29,7 @@ export default class SignInForm extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-        getUser(user).then(data => {
-            console.log(data);
-        });
+        setToken(user);
 
     }
 

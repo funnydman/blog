@@ -4,13 +4,13 @@ from .models import Post, Category
 from .serializers import PostSerializer, CategorySerializer
 
 
-class PostViewSet(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
     queryset = Category.objects.all()
     serializer_class = CategorySerializer

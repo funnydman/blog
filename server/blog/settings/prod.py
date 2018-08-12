@@ -7,6 +7,9 @@ except ImportError:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'prodkey'
 
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SESSION_COOKIE_SECURE = True
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 # change it
