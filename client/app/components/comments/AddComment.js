@@ -25,7 +25,7 @@ export default class AddComment extends React.Component {
             // Only temp solution!
             headers: {
                 "Content-Type": "application/json; charset=utf-8",
-                "Authorization": "Token " + window.sessionStorage.getItem('token')
+                "Authorization": "Token " + window.localStorage.getItem('token')
             }
         }).then(function (response) {
             console.log(response.status);

@@ -1,17 +1,6 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import {postFetchData} from "../../utils/getFetchData";
-
-function getUser(user) {
-    return postFetchData('/api/login', user);
-}
-
-// Only temp solution!
-function setToken(user) {
-    getUser(user).then(data => (
-        window.sessionStorage.setItem('token', data.token)
-    ))
-}
+import {userActions} from "./login";
 
 export default class SignInForm extends React.Component {
     constructor(props) {
@@ -29,7 +18,7 @@ export default class SignInForm extends React.Component {
             username: this.state.username,
             password: this.state.password
         };
-        setToken(user);
+        userActions.login(user.username, user.password);
 
     }
 
