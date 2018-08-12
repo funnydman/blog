@@ -3,15 +3,6 @@ import Post from "./Post";
 import NoPosts from './NoPosts';
 import {getPostLists} from '../../actions/getPostMethods';
 
-function getPublishedPosts(posts) {
-    let publishedPosts = [];
-    for (let i = 0; i < posts.length; i++) {
-        if (posts[i].is_published === true) {
-            publishedPosts.push(posts[i]);
-        }
-    }
-    return publishedPosts;
-}
 
 export default class PostLists extends React.Component {
     constructor(props) {
@@ -27,7 +18,7 @@ export default class PostLists extends React.Component {
         getPostLists().then((data) => {
                 this.setState({
                     isLoaded: true,
-                    posts: getPublishedPosts(data)
+                    posts: data
                 });
             },
             (error) => {

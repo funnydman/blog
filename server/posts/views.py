@@ -6,7 +6,7 @@ from .serializers import PostSerializer, CategorySerializer
 
 class PostViewSet(viewsets.ReadOnlyModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(is_published=True)
     serializer_class = PostSerializer
 
 
