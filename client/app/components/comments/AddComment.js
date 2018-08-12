@@ -4,12 +4,22 @@ function getAuthUser() {
     return JSON.parse(window.localStorage.getItem('user'));
 }
 
+function displayErrors(response) {
+    const errorList = [];
+    for (let message in response) {
+        if (response.hasOwnProperty(message)) {
+            errorList.push(message);
+        }
+    }
+    return errorList;
+}
 
 export default class AddComment extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            content: ''
+            content: '',
+            responseOk: false
         };
         this.post = this.props.post;
         this.onSubmit = this.onSubmit.bind(this);
@@ -18,6 +28,7 @@ export default class AddComment extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
+
         const authOfComment = getAuthUser()['user_id'];
         const comment = {
             // Todo: send real author name
@@ -33,9 +44,10 @@ export default class AddComment extends React.Component {
                 "Content-Type": "application/json; charset=utf-8",
                 "Authorization": "Token " + window.localStorage.getItem('token')
             }
-        }).then(function (response) {
-            console.log(response.status);
-        });
+        }).then(response => {
+            console.log(response);
+        })
+
 
     }
 

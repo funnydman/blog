@@ -11,10 +11,6 @@ export default function PostDetail(props) {
                     <p className="card-text" dangerouslySetInnerHTML={{__html: props.content}}>
                     </p>
                 </div>
-                <div className="card-footer text-muted">
-                    Posted on by
-                    <a href="#">Lorem</a>
-                </div>
             </div>
             <div>
                 <h3>Comments</h3>

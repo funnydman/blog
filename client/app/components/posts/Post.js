@@ -26,7 +26,7 @@ export default function Post(props) {
                 </div>
                 <div className="card-footer text-muted">
                     Posted on by <span>{props.lastModified}</span>
-                    <a href="#">Lorem</a>
+                    <a href="#">FUNNYDMAN</a>
                 </div>
             </div>
         </div>
