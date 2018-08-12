@@ -1,5 +1,10 @@
 import React, {Fragment} from "react";
 
+function getAuthUser() {
+    return JSON.parse(window.localStorage.getItem('user'));
+}
+
+
 export default class AddComment extends React.Component {
     constructor(props) {
         super(props);
@@ -13,9 +18,10 @@ export default class AddComment extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
+        const authOfComment = getAuthUser()['user_id'];
         const comment = {
             // Todo: send real author name
-            author: 3,
+            author: authOfComment,
             content: this.state.content,
             post: this.post
         };
