@@ -1,6 +1,5 @@
 import React, {Fragment} from "react";
 import CommentItem from "./CommentItem";
-import AddComment from "./AddComment";
 
 export default function CommentsList(props) {
 
@@ -10,7 +9,6 @@ export default function CommentsList(props) {
         return (
             <Fragment>
                 <div>No comments yet!</div>
-                <AddComment post={props.post}/>
             </Fragment>
         );
     } else {
@@ -19,7 +17,6 @@ export default function CommentsList(props) {
                 {props.comments.map((comment) => (
                     <CommentItem content={comment.content} key={comment.id}/>
                 ))}
-                <AddComment post={props.post}/>
             </div>
         );
     }
