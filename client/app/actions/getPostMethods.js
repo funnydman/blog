@@ -1,4 +1,4 @@
-import getFetchData from "../utils/getFetchData";
+import getFetchData from "../helpers/getFetchData";
 
 export function getPostLists() {
     return getFetchData('/api/posts/');

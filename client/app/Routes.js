@@ -1,14 +1,14 @@
 import {Route, Switch} from "react-router-dom";
-import Home from "./containers/Home";
-import About from "./containers/About";
+import HomePage from "./containers/HomePage";
+import AboutPage from "./containers/AboutPage";
 import React from "react";
 import PostDetailPage from "./containers/PostDetailPage";
 import SignUpPage from "./containers/SignUpPage";
 
 export const HeaderRouters = () => (
     <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route path='/about' component={About}/>
+        <Route exact path='/' component={HomePage}/>
+        <Route path='/about' component={AboutPage}/>
     </Switch>
 );
 

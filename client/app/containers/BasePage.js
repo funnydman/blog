@@ -11,7 +11,7 @@ function Content(props) {
     );
 }
 
-export default function PageTemp(props) {
+export default function BasePage(props) {
     return (
         <div>
             <Header/>

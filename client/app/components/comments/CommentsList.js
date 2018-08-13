@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import Comment from "./Comment";
+import CommentItem from "./CommentItem";
 import AddComment from "./AddComment";
 
 export default function CommentsList(props) {
@@ -17,7 +17,7 @@ export default function CommentsList(props) {
         return (
             <div className="comments-list">
                 {props.comments.map((comment) => (
-                    <Comment content={comment.content} key={comment.id}/>
+                    <CommentItem content={comment.content} key={comment.id}/>
                 ))}
                 <AddComment post={props.post}/>
             </div>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import PageTemp from './PageTemp';
+import BasePage from './BasePage';
 import PostDetail from "../components/posts/PostDetail";
 import {getPostDetail} from "../actions/getPostMethods";
 
@@ -32,11 +32,12 @@ export default class PostDetailPage extends React.Component {
 
     render() {
         const {post} = this.state;
-            return (
-                <PageTemp>
-                    <PostDetail title={post.title} id={post.id} content={post.content} comments={post.comments} key={post.id}/>
-                </PageTemp>
+        return (
+            <BasePage>
+                <PostDetail title={post.title} id={post.id} content={post.content} comments={post.comments}
+                            key={post.id}/>
+            </BasePage>
 
-            );
+        );
     }
 }

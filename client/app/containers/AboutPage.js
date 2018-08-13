@@ -1,10 +1,10 @@
 import * as React from "react";
-import PageTemp from './PageTemp';
+import BasePage from './BasePage';
 
-class About extends React.Component {
+class AboutPage extends React.Component {
     render() {
         return (
-            <PageTemp>
+            <BasePage>
                 <h1>About page</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, iusto!</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, molestias, vero? At consequatur
@@ -14,10 +14,10 @@ class About extends React.Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda commodi culpa
                     cupiditate eaque earum eum exercitationem fuga harum id illo itaque magni natus, nulla officia
                     officiis provident? Officia, tempore?</p>
-            </PageTemp>
+            </BasePage>
 
         );
     }
 }
 
-export default About;
+export default AboutPage;

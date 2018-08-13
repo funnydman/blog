@@ -1,13 +1,13 @@
 import * as React from "react";
 import SignUpForm from "../components/auth/SignUpForm";
-import PageTemp from "./PageTemp";
+import BasePage from "./BasePage";
 
 export default class SignUpPage extends React.Component {
     render() {
         return (
-            <PageTemp>
+            <BasePage>
                 <SignUpForm/>
-            </PageTemp>
+            </BasePage>
         );
 
     }

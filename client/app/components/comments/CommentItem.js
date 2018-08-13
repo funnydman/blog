@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function Comment(props) {
+export default function CommentItem(props) {
     return (<p>{props.content}</p>);
 }

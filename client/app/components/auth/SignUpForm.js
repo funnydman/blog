@@ -1,5 +1,5 @@
 import * as React from "react";
-import {postFetchData} from "../../utils/getFetchData";
+import {postFetchData} from "../../helpers/getFetchData";
 
 export default class SignUpForm extends React.Component {
     constructor(props) {
@@ -9,8 +9,8 @@ export default class SignUpForm extends React.Component {
             email: '',
             location: '',
             password: '',
-            passwordAgain:'',
-            error:''
+            passwordAgain: '',
+            error: ''
         };
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -31,7 +31,7 @@ export default class SignUpForm extends React.Component {
         postFetchData('/api/users', newUser).then(function (response) {
             console.log('New user created', response);
             that.setState({
-                error:response.error
+                error: response.error
             });
         });
     }

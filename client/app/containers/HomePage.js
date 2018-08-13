@@ -1,15 +1,15 @@
 import * as React from "react";
-import PageTemp from './PageTemp';
+import BasePage from './BasePage';
 import PostLists from "../components/posts/PostLists";
 
-class Home extends React.Component {
+class HomePage extends React.Component {
     render() {
         return (
-            <PageTemp>
+            <BasePage>
                 <PostLists/>
-            </PageTemp>
+            </BasePage>
         );
     }
 }
 
-export default Home;
+export default HomePage;
