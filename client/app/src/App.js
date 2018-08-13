@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
-import ErrorBoundary from './helpers/errorBoundary';
+import ErrorBoundary from './components/helpers/errorBoundary';
 import {AuthRouters, HeaderRouters, PostRouters} from './Routes';
 
 export default class App extends React.Component {

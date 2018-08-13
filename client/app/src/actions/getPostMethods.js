@@ -1,10 +1,10 @@
-import getFetchData from "../helpers/getFetchData";
-import {PublicApi} from "../api/api";
+import getFetchData from "./getFetchData";
+import {publicAPI} from "../api/publicAPI";
 
 export function getPostLists() {
-    return getFetchData(PublicApi.posts);
+    return getFetchData(publicAPI.posts);
 }
 
 export function getPostDetail(id) {
-    return getFetchData(PublicApi.posts + id);
+    return getFetchData(publicAPI.posts + id);
 }
