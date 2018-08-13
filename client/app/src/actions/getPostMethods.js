@@ -1,9 +1,10 @@
 import getFetchData from "../helpers/getFetchData";
+import {PublicApi} from "../api/api";
 
 export function getPostLists() {
-    return getFetchData('/api/posts/');
+    return getFetchData(PublicApi.posts);
 }
 
 export function getPostDetail(id) {
-    return getFetchData(`/api/posts/${id}/`);
+    return getFetchData(PublicApi.posts + id);
 }
