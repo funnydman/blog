@@ -1,12 +1,12 @@
 import * as React from "react";
 import BasePage from './BasePage';
-import PostLists from "../components/posts/PostLists";
+import PostList from "../components/posts/PostList";
 
 class HomePage extends React.Component {
     render() {
         return (
             <BasePage>
-                <PostLists/>
+                <PostList/>
             </BasePage>
         );
     }

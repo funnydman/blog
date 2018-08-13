@@ -2,9 +2,9 @@ import React from "react";
 import Post from "./Post";
 import NoPosts from './NoPosts';
 import {getPostLists} from '../../actions/getPostMethods';
+import PropTypes from 'prop-types';
 
-
-export default class PostLists extends React.Component {
+export default class PostList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -56,3 +56,7 @@ export default class PostLists extends React.Component {
         }
     }
 }
+PostList.propTypes = {
+    posts: PropTypes.array,
+    isLoaded: PropTypes.bool
+};
