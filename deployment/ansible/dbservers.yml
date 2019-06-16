@@ -1,6 +1,0 @@
-- hosts: webservers
-  gather_facts: no
-  become_user: postgres
-  become: yes
-  roles:
-  - database

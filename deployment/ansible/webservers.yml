@@ -1,8 +1,0 @@
-- hosts: webservers
-  gather_facts: no
-  roles:
-    - create-new-user
-    - server
-    - common
-    - app
-    - client
