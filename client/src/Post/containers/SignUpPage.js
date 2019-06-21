@@ -1,13 +1,13 @@
 import * as React from "react";
-import SignUpForm from "../components/auth/SignUpForm";
-import BasePage from "./BasePage";
+import SignUpForm from "../../Auth/containers/SignUpForm";
+import Base from "../../Template/containers/Base";
 
 export default class SignUpPage extends React.Component {
     render() {
         return (
-            <BasePage>
+            <Base>
                 <SignUpForm/>
-            </BasePage>
+            </Base>
         );
 
     }

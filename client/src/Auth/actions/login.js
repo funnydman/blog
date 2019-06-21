@@ -1,6 +1,5 @@
 export const userActions = {
     login,
-    logout
 };
 
 export function login(username, password) {

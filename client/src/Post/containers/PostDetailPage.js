@@ -1,6 +1,6 @@
 import * as React from "react";
-import BasePage from './BasePage';
-import PostDetail from "../components/posts/PostDetail";
+import Base from '../../Template/containers/Base';
+import PostDetail from "./posts/PostDetail";
 import {getPostDetail} from "../actions/getPostMethods";
 
 export default class PostDetailPage extends React.Component {
@@ -33,10 +33,10 @@ export default class PostDetailPage extends React.Component {
     render() {
         const {post} = this.state;
         return (
-            <BasePage>
+            <Base>
                 <PostDetail title={post.title} id={post.id} content={post.content} comments={post.comments}
                             key={post.id}/>
-            </BasePage>
+            </Base>
 
         );
     }

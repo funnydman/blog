@@ -1,5 +1,5 @@
 import * as React from "react";
-import {postFetchData} from "../../actions/getFetchData";
+import {postFetchData} from "../../Post/actions/getFetchData";
 
 export default class SignUpForm extends React.Component {
     constructor(props) {

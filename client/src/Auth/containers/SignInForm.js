@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Link} from "react-router-dom";
-import {userActions} from "./login";
+import {userActions} from "../actions/login";
 
 export default class SignInForm extends React.Component {
     constructor(props) {

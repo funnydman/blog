@@ -6,7 +6,7 @@ import SideWidget from './SideWidget';
 
 export default function Sidebar(props) {
     return (
-        <div className="col-md-4">
+        <div className="col-md-4" style={{marginTop: 85}}>
             <AuthForm/>
             <SearchWidget/>
             <CategoriesWidget/>

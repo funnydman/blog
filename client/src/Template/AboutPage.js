@@ -1,10 +1,10 @@
 import * as React from "react";
-import BasePage from './BasePage';
+import Base from './containers/Base';
 
 class AboutPage extends React.Component {
     render() {
         return (
-            <BasePage>
+            <Base>
                 <h1>About page</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, iusto!</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, molestias, vero? At consequatur
@@ -14,7 +14,7 @@ class AboutPage extends React.Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda commodi culpa
                     cupiditate eaque earum eum exercitationem fuga harum id illo itaque magni natus, nulla officia
                     officiis provident? Officia, tempore?</p>
-            </BasePage>
+            </Base>
 
         );
     }

@@ -112,6 +112,5 @@ venv.bak/
 
 # PROJECT
 *.retry
-client/dist/
 static/
-**/node_modules/
+**/node_modules/**

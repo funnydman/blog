@@ -1,5 +1,5 @@
 import * as React from "react";
-import SignInForm from "../auth/SignInForm";
+import SignInForm from "../../../Auth/containers/SignInForm";
 
 export default function AuthForm(props) {
     return (

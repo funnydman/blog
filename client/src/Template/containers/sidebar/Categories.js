@@ -1,5 +1,5 @@
 import * as React from "react";
-import getFetchData from "../../actions/getFetchData";
+import getFetchData from "../../../Post/actions/getFetchData";
 
 export default class Categories extends React.Component {
     constructor(props) {
