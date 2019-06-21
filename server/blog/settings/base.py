@@ -1,7 +1,5 @@
 import os
 
-import raven
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(
     os.path.dirname(
@@ -52,7 +50,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'userprofiles.middlewares.simple_middleware'
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -128,11 +125,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 #
 # # from this paths we get static files
-STATICFILES_DIRS = [
-
-    os.path.join(PROJECT_DIR, 'client/dist')
-
-]
 
 MEDIA_URL = '/media/'
 
@@ -147,14 +139,6 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
     }
 }
-
-RAVEN_CONFIG = {
-    'dsn': 'https://e5132c59a6c647bf9b5a1cfbcdefd4f3:8beed181bea944a0abc11fe88c0d7109@sentry.io/1251697',
-    # If you are using git, you can also automatically configure the
-    # release based on the git info.
-    'release': raven.fetch_git_sha(PROJECT_DIR),
-}
-
 # Django rest framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (

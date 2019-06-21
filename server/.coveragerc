@@ -1,6 +1,0 @@
-[run]
-source = auth,blog,home,posts,userprofile
-
-[report]
-omit = */migrations/*
-       blog/settings/*

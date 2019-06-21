@@ -1,8 +1,9 @@
 import * as React from "react";
 import Base from '../../Template/containers/Base';
 import PostList from "../../Post/containers/posts/PostList";
+import '../sass/main.sass'
 
-class HomePage extends React.Component {
+class Home extends React.Component {
     render() {
         return (
             <Base>
@@ -12,4 +13,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default Home;
