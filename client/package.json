@@ -40,9 +40,12 @@
     }
   },
   "devDependencies": {
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "husky": "^2.4.1",
     "lint-staged": "^8.2.1",
     "prettier": "^1.18.2",
+    "react-test-renderer": "^16.8.6",
     "redux-devtools-extension": "^2.13.8"
   }
 }

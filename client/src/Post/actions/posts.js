@@ -14,11 +14,11 @@ export function setPostFetch(posts) {
     };
 }
 
-export function fetchPosts() {
+export function fetchPosts(id) {
     return function(dispatch) {
         dispatch(setPostStatus('STARTING'));
         const fetchConfig = {
-            url: 'https://jsonplaceholder.typicode.com/posts',
+            url: `https://jsonplaceholder.typicode.com/posts/${id}`,
             method: 'get',
             successStatusCode: 200,
             successCallback: res => {

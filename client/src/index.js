@@ -1,14 +1,14 @@
 import * as ReactDOM from 'react-dom';
 import React from 'react';
-import App from './App';
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
+import { BaseRouters } from './routes';
 
 const store = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <BaseRouters />
     </Provider>,
     document.getElementById('root')
 );

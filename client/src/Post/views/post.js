@@ -11,7 +11,7 @@ export default class Post extends React.Component {
                         <p>{this.props.content}</p>
                         <Link
                             className="btn btn-primary"
-                            to={`/post/${this.props.id}`}
+                            to={`/posts/${this.props.id}`}
                         >
                             Read More &rarr;
                         </Link>

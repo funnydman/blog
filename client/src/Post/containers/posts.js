@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/posts';
 import PostListView from '../views/postList';
+import PostDetailView from '../views/postDetail';
 
 const mapStateToProps = state => {
     return {
@@ -11,15 +12,18 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchPosts: () => {
-            dispatch(fetchPosts());
+        fetchPosts: id => {
+            dispatch(fetchPosts(id));
         }
     };
 };
 
-const PostList = connect(
+export const PostList = connect(
     mapStateToProps,
     mapDispatchToProps
 )(PostListView);
 
-export default PostList;
+export const PostDetail = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(PostDetailView);
