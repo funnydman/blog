@@ -4,13 +4,17 @@ import SearchWidget from './SearchWidget';
 import CategoriesWidget from './CategoriesWidget';
 import SideWidget from './SideWidget';
 
-export default function Sidebar(props) {
-    return (
-        <div className="col-md-4" style={{ marginTop: 85 }}>
-            <AuthForm />
-            <SearchWidget />
-            <CategoriesWidget />
-            <SideWidget />
-        </div>
-    );
+class Sidebar extends React.Component {
+    render() {
+        return (
+            <div className="col-md-4">
+                <AuthForm />
+                <SearchWidget />
+                <CategoriesWidget />
+                <SideWidget />
+            </div>
+        );
+    }
 }
+
+export default Sidebar;

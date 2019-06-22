@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default class Post extends React.Component {
+// import {browserHistory} from 'react-router'
+class Post extends React.Component {
     render() {
         return (
             <div className="post" id={this.props.id}>
@@ -21,3 +22,5 @@ export default class Post extends React.Component {
         );
     }
 }
+
+export default Post;

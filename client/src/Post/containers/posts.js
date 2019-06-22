@@ -3,20 +3,16 @@ import { fetchPosts } from '../actions/posts';
 import PostListView from '../views/postList';
 import PostDetailView from '../views/postDetail';
 
-const mapStateToProps = state => {
-    return {
-        fetchPostsStatus: state.PostReducer.fetchPostsStatus,
-        fetchBlogPosts: state.PostReducer.fetchBlogPosts
-    };
-};
+const mapStateToProps = state => ({
+    fetchPostsStatus: state.PostReducer.fetchPostsStatus,
+    fetchBlogPosts: state.PostReducer.fetchBlogPosts
+});
 
-const mapDispatchToProps = dispatch => {
-    return {
-        fetchPosts: id => {
-            dispatch(fetchPosts(id));
-        }
-    };
-};
+const mapDispatchToProps = dispatch => ({
+    fetchPosts: id => {
+        dispatch(fetchPosts(id));
+    }
+});
 
 export const PostList = connect(
     mapStateToProps,

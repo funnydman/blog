@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-export default function dispatchFetch(fetchConfig) {
+const dispatchFetch = async fetchConfig => {
     let resFetchConfig = {
         url: fetchConfig.url,
         method: fetchConfig.method,
         data: fetchConfig.data
     };
-    return axios(resFetchConfig).then(res => {
+    return await axios(resFetchConfig).then(res => {
         if (res.status === fetchConfig.successStatusCode) {
             fetchConfig.successCallback(res);
         } else {
@@ -15,4 +15,6 @@ export default function dispatchFetch(fetchConfig) {
             }
         }
     });
-}
+};
+
+export default dispatchFetch;

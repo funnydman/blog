@@ -1,21 +1,17 @@
 import dispatchFetch from '../../Helper/fetch';
 
-export function setPostStatus(status) {
-    return {
-        type: 'SET_POSTS_STATUS',
-        status
-    };
-}
+export const setPostStatus = status => ({
+    type: 'SET_POSTS_STATUS',
+    status
+});
 
-export function setPostFetch(posts) {
-    return {
-        type: 'SET_BLOG_POSTS',
-        posts
-    };
-}
+export const setPostFetch = posts => ({
+    type: 'SET_BLOG_POSTS',
+    posts
+});
 
-export function fetchPosts(id) {
-    return function(dispatch) {
+export const fetchPosts = id => {
+    return dispatch => {
         dispatch(setPostStatus('STARTING'));
         const fetchConfig = {
             url: `https://jsonplaceholder.typicode.com/posts/${id || ''}`,
@@ -23,7 +19,6 @@ export function fetchPosts(id) {
             successStatusCode: 200,
             successCallback: res => {
                 dispatch(setPostFetch(res.data));
-
                 dispatch(setPostStatus('FINISHED'));
             },
             errorCallback: res => {
@@ -33,4 +28,4 @@ export function fetchPosts(id) {
 
         dispatchFetch(fetchConfig);
     };
-}
+};

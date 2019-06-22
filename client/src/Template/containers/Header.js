@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Header extends React.Component {
     render() {
         return (
-            <header>
+            <header style={{ marginTop: '80px' }}>
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                     <div className="container">
                         <Link to="/" className="navbar-brand">
