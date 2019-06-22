@@ -1,9 +1,9 @@
-import { routerReducer } from 'react-router-redux';
-import { combineReducers } from 'redux';
-import Home from './Home/reducers/reducer';
+import {routerReducer} from 'react-router-redux';
+import {combineReducers} from 'redux';
+import PostReducer from "./Post/reducers/reducer";
 
 const BaseReducer = combineReducers({
-    Home,
+    PostReducer,
     routing: routerReducer
 });
 

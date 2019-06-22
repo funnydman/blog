@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { postFetchData } from '../../Post/actions/getFetchData';
 
 export default class SignUpForm extends React.Component {
     constructor(props) {
@@ -27,12 +26,6 @@ export default class SignUpForm extends React.Component {
         };
         // TODO func.bind(this)?
         let that = this;
-        postFetchData('/api/users', newUser).then(function(response) {
-            console.log('New user created', response);
-            that.setState({
-                error: response.error
-            });
-        });
     }
 
     render() {
@@ -54,7 +47,7 @@ export default class SignUpForm extends React.Component {
                     placeholder="Username"
                     required
                     autoFocus
-                    onChange={e => this.setState({ username: e.target.value })}
+                    onChange={e => this.setState({username: e.target.value})}
                 />
 
                 <label htmlFor="inputEmail" className="sr-only">
@@ -67,7 +60,7 @@ export default class SignUpForm extends React.Component {
                     placeholder="Email"
                     required
                     autoFocus
-                    onChange={e => this.setState({ email: e.target.value })}
+                    onChange={e => this.setState({email: e.target.value})}
                 />
 
                 <label htmlFor="inputLocation" className="sr-only">
@@ -80,14 +73,14 @@ export default class SignUpForm extends React.Component {
                     placeholder="Location"
                     required
                     autoFocus
-                    onChange={e => this.setState({ location: e.target.value })}
+                    onChange={e => this.setState({location: e.target.value})}
                 />
 
                 <label htmlFor="inputPasswordSignUp" className="sr-only">
                     Password
                 </label>
                 <input
-                    onChange={e => this.setState({ password: e.target.value })}
+                    onChange={e => this.setState({password: e.target.value})}
                     type="password"
                     id="inputPasswordSignUp"
                     className="form-control"
@@ -100,7 +93,7 @@ export default class SignUpForm extends React.Component {
                 </label>
                 <input
                     onChange={e =>
-                        this.setState({ passwordAgain: e.target.value })
+                        this.setState({passwordAgain: e.target.value})
                     }
                     type="password"
                     id="inputPasswordSignUpAgain"

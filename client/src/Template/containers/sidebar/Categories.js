@@ -1,5 +1,4 @@
 import * as React from 'react';
-import getFetchData from '../../../Post/actions/getFetchData';
 
 export default class Categories extends React.Component {
     constructor(props) {
@@ -10,11 +9,7 @@ export default class Categories extends React.Component {
     }
 
     componentDidMount() {
-        getFetchData('/api/categories').then(data => {
-            this.setState({
-                categories: data
-            });
-        });
+
     }
 
     render() {
@@ -22,11 +17,8 @@ export default class Categories extends React.Component {
         return (
             <div>
                 <ul className="list-unstyled mb-0">
-                    {categories.map(category => (
-                        <li key={category.id}>
-                            <a href="#">{category.name}</a>
-                        </li>
-                    ))}
+
+                    categories
                 </ul>
             </div>
         );
