@@ -19,7 +19,7 @@ export function fetchPosts() {
         dispatch(setPostStatus('STARTING'));
         const fetchConfig = {
             url: 'https://jsonplaceholder.typicode.com/posts',
-            httpMethod: 'get',
+            method: 'get',
             successStatusCode: 200,
             successCallback: res => {
                 dispatch(setPostFetch(res.data));

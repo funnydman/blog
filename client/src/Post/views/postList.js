@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './Post';
+import Post from './post';
 import Base from '../../Template/containers/Base';
 
 class PostListView extends React.Component {
@@ -14,12 +14,10 @@ class PostListView extends React.Component {
                 <React.Fragment>
                     <Base>
                         <div className="posts-list">
-                            <p>Here we go!</p>
                             {this.props.fetchBlogPosts.map(post => (
                                 <Post
                                     id={post.id}
                                     title={post.title}
-                                    body={post.body}
                                     key={post.id}
                                 />
                             ))}
@@ -29,10 +27,11 @@ class PostListView extends React.Component {
             );
         } else {
             return (
-                <div className="no-posts">
-                    <h1>Oops, we don't have any posts</h1>
-                    <p>But we'll add soon</p>
-                </div>
+                <React.Fragment>
+                    <Base>
+                        <p>Loading...</p>
+                    </Base>
+                </React.Fragment>
             );
         }
     }
