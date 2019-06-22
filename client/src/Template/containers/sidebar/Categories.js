@@ -8,18 +8,13 @@ export default class Categories extends React.Component {
         };
     }
 
-    componentDidMount() {
-
-    }
+    componentDidMount() {}
 
     render() {
         const categories = this.state.categories;
         return (
             <div>
-                <ul className="list-unstyled mb-0">
-
-                    categories
-                </ul>
+                <ul className="list-unstyled mb-0">categories</ul>
             </div>
         );
     }

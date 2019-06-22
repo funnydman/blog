@@ -6,7 +6,7 @@ export default class SignUpPage extends React.Component {
     render() {
         return (
             <Base>
-                <SignUpForm/>
+                <SignUpForm />
             </Base>
         );
     }

@@ -1,6 +1,6 @@
 import React from 'react';
-import Post from "./Post";
-import Base from "../../Template/containers/Base";
+import Post from './Post';
+import Base from '../../Template/containers/Base';
 
 class PostListView extends React.Component {
     constructor(props) {
@@ -14,7 +14,6 @@ class PostListView extends React.Component {
                 <React.Fragment>
                     <Base>
                         <div className="posts-list">
-
                             <p>Here we go!</p>
                             {this.props.fetchBlogPosts.map(post => (
                                 <Post
@@ -34,10 +33,9 @@ class PostListView extends React.Component {
                     <h1>Oops, we don't have any posts</h1>
                     <p>But we'll add soon</p>
                 </div>
-            )
+            );
         }
     }
-
 }
 
 export default PostListView;

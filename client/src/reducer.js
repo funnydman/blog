@@ -1,6 +1,6 @@
-import {routerReducer} from 'react-router-redux';
-import {combineReducers} from 'redux';
-import PostReducer from "./Post/reducers/reducer";
+import { routerReducer } from 'react-router-redux';
+import { combineReducers } from 'redux';
+import PostReducer from './Post/reducers/reducer';
 
 const BaseReducer = combineReducers({
     PostReducer,

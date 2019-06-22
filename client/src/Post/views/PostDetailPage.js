@@ -13,11 +13,10 @@ export default class PostDetailPage extends React.Component {
         this.postId = props.match.params.postId;
     }
 
-    componentDidMount() {
-    }
+    componentDidMount() {}
 
     render() {
-        const {post} = this.state;
+        const { post } = this.state;
         return (
             <Base>
                 <PostDetail
