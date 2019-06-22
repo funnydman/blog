@@ -10,7 +10,8 @@
     "react-router-dom": "^5.0.1",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^3.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "prop-types": "latest"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [

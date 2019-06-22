@@ -1,8 +1,8 @@
 import React from 'react';
 import Post from './Post';
 import NoPosts from './NoPosts';
-import { getPostLists } from '../../actions/getPostMethods';
 import PropTypes from 'prop-types';
+import { getPostsList } from '../../../Home/actions/posts';
 
 export default class PostList extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class PostList extends React.Component {
     }
 
     componentDidMount() {
-        getPostLists().then(
+        getPostsList().then(
             data => {
                 this.setState({
                     isLoaded: true,
@@ -46,9 +46,7 @@ export default class PostList extends React.Component {
                         <Post
                             id={post.id}
                             title={post.title}
-                            content={post.content}
-                            categories={post.categories}
-                            lastModified={post.last_modified}
+                            body={post.body}
                             key={post.id}
                         />
                     ))}
