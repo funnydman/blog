@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from 'react';
 
 function getAuthUser() {
     return JSON.parse(window.localStorage.getItem('user'));
@@ -41,14 +41,12 @@ export default class AddComment extends React.Component {
             body: JSON.stringify(comment),
             // Only temp solution!
             headers: {
-                "Content-Type": "application/json; charset=utf-8",
-                "Authorization": "Token " + window.localStorage.getItem('token')
+                'Content-Type': 'application/json; charset=utf-8',
+                Authorization: 'Token ' + window.localStorage.getItem('token')
             }
         }).then(response => {
             console.log(response);
-        })
-
-
+        });
     }
 
     handleInput(event) {
@@ -60,12 +58,23 @@ export default class AddComment extends React.Component {
     render() {
         return (
             <Fragment>
-                <form className="add-comment" onSubmit={this.onSubmit} method="POST">
-                    <p><textarea name="content" onChange={this.handleInput}/></p>
-                    <p><input className="btn btn-primary" type="submit" value="Add"/></p>
+                <form
+                    className="add-comment"
+                    onSubmit={this.onSubmit}
+                    method="POST"
+                >
+                    <p>
+                        <textarea name="content" onChange={this.handleInput} />
+                    </p>
+                    <p>
+                        <input
+                            className="btn btn-primary"
+                            type="submit"
+                            value="Add"
+                        />
+                    </p>
                 </form>
             </Fragment>
-
         );
     }
 }

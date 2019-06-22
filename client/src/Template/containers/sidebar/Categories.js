@@ -1,5 +1,5 @@
-import * as React from "react";
-import getFetchData from "../../../Post/actions/getFetchData";
+import * as React from 'react';
+import getFetchData from '../../../Post/actions/getFetchData';
 
 export default class Categories extends React.Component {
     constructor(props) {
@@ -7,13 +7,13 @@ export default class Categories extends React.Component {
         this.state = {
             categories: []
         };
-    };
+    }
 
     componentDidMount() {
         getFetchData('/api/categories').then(data => {
             this.setState({
                 categories: data
-            })
+            });
         });
     }
 
@@ -29,7 +29,6 @@ export default class Categories extends React.Component {
                     ))}
                 </ul>
             </div>
-
         );
     }
 }

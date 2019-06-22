@@ -1,5 +1,5 @@
-import * as React from "react";
-import Categories from "./Categories";
+import * as React from 'react';
+import Categories from './Categories';
 
 export default function CategoriesWidget(props) {
     return (
@@ -8,11 +8,10 @@ export default function CategoriesWidget(props) {
             <div className="card-body">
                 <div className="row">
                     <div className="col-lg-12">
-                        <Categories/>
+                        <Categories />
                     </div>
                 </div>
             </div>
         </div>
     );
-
 }

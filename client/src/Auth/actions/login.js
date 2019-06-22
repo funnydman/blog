@@ -1,12 +1,12 @@
 export const userActions = {
-    login,
+    login
 };
 
 export function login(username, password) {
     const requestOptions = {
         method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({username, password})
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
     };
     return fetch('/api/login', requestOptions)
         .then(handleResponse)

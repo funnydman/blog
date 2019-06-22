@@ -1,5 +1,5 @@
-import getFetchData from "./getFetchData";
-import {publicAPI} from "../api/publicAPI";
+import getFetchData from './getFetchData';
+import { publicAPI } from '../api/publicAPI';
 
 export function getPostLists() {
     return getFetchData(publicAPI.posts);

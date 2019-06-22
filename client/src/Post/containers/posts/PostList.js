@@ -1,7 +1,7 @@
-import React from "react";
-import Post from "./Post";
+import React from 'react';
+import Post from './Post';
 import NoPosts from './NoPosts';
-import {getPostLists} from '../../actions/getPostMethods';
+import { getPostLists } from '../../actions/getPostMethods';
 import PropTypes from 'prop-types';
 
 export default class PostList extends React.Component {
@@ -15,43 +15,44 @@ export default class PostList extends React.Component {
     }
 
     componentDidMount() {
-        getPostLists().then((data) => {
+        getPostLists().then(
+            data => {
                 this.setState({
                     isLoaded: true,
                     posts: data
                 });
             },
-            (error) => {
+            error => {
                 this.setState({
                     isLoaded: true,
                     error
                 });
             }
-        )
+        );
     }
 
     render() {
-        const {error, isLoaded, posts} = this.state;
+        const { error, isLoaded, posts } = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
-        }
-        else if (this.state.posts.length === 0) {
-            return (<NoPosts/>);
-        }
-
-        else {
+        } else if (this.state.posts.length === 0) {
+            return <NoPosts />;
+        } else {
             return (
                 <div className="posts-list">
                     {posts.map(post => (
-                        <Post id={post.id} title={post.title} content={post.content} categories={post.categories}
-                              lastModified={post.last_modified}
-                              key={post.id}/>
-
+                        <Post
+                            id={post.id}
+                            title={post.title}
+                            content={post.content}
+                            categories={post.categories}
+                            lastModified={post.last_modified}
+                            key={post.id}
+                        />
                     ))}
                 </div>
-
             );
         }
     }

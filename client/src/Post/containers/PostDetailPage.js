@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react';
 import Base from '../../Template/containers/Base';
-import PostDetail from "./posts/PostDetail";
-import {getPostDetail} from "../actions/getPostMethods";
+import PostDetail from './posts/PostDetail';
+import { getPostDetail } from '../actions/getPostMethods';
 
 export default class PostDetailPage extends React.Component {
     constructor(props) {
@@ -15,29 +15,34 @@ export default class PostDetailPage extends React.Component {
     }
 
     componentDidMount() {
-        getPostDetail(this.postId).then((data) => {
+        getPostDetail(this.postId).then(
+            data => {
                 this.setState({
                     isLoaded: true,
                     post: data
                 });
             },
-            (error) => {
+            error => {
                 this.setState({
                     isLoaded: true,
                     error
                 });
             }
-        )
+        );
     }
 
     render() {
-        const {post} = this.state;
+        const { post } = this.state;
         return (
             <Base>
-                <PostDetail title={post.title} id={post.id} content={post.content} comments={post.comments}
-                            key={post.id}/>
+                <PostDetail
+                    title={post.title}
+                    id={post.id}
+                    content={post.content}
+                    comments={post.comments}
+                    key={post.id}
+                />
             </Base>
-
         );
     }
 }
