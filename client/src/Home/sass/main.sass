@@ -1,0 +1,96 @@
+@import "vars"
+
+*
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  &:before, &:after
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+html, body
+  height: 100%
+
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.4
+  font-family: $default-font
+  overflow-x: hidden
+  background-color: #ccc
+
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+
+.text-center
+  text-align: center
+
+::selection
+  //background-color: $accent
+  color: orange
+
+body
+  background-color: #ccc !important
+
+.about-h1
+  padding-top: 100px
+
+.nav-item a.active
+  background-color: blue !important
+
+.fixed-top
+  position: static !important
+  margin-bottom: 40px
+
+.truncate + *
+  display: none
+
+.add-comment
+  textarea
+    width: 400px
+    height: 100px
+
+.form-signup
+  width: 350px
+  margin: 0 auto
+
+.categories
+  margin-left: 20px
+
+.category
+  padding: 0 8px
+
+
+footer
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0

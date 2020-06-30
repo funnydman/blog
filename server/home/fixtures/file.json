@@ -1,0 +1,22 @@
+[
+  {
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+      "title": "Great Post about living in Belarus",
+      "content": "<p><img alt=\"\" src=\"/media/media/2018/07/29/some.jpg\" style=\"height:507px; width:900px\" />add image</p>\r\n\r\n<p><img alt=\"\" src=\"/media/media/2018/07/29/screenshot-from-2018-07-01-13-53-24_b3xIdQz.png\" style=\"height:169px; width:300px\" /></p>",
+      "pub_date": "2018-07-27T19:56:10.446Z",
+      "last_modified": "2018-07-29T15:36:52.175Z"
+    }
+  },
+  {
+    "model": "posts.post",
+    "pk": 12,
+    "fields": {
+      "title": "dddd",
+      "content": "sddsfa",
+      "pub_date": "2018-07-27T21:08:57.593Z",
+      "last_modified": "2018-07-27T21:08:57.594Z"
+    }
+  }
+]
