@@ -22,7 +22,7 @@ def create_user(request):
         return Response({'error': 'Username may contain more than 5 symbols'}, status=HTTP_400_BAD_REQUEST)
     if password != passwordAgain:
         return Response({'error': 'Passwords may be the same!'}, status=HTTP_400_BAD_REQUEST)
-    user = User.objects.create_user(username=password, email=email, password=password)
+    user = User.objects.create_user(username=username, email=email, password=password)
     user.profile.location = location
     user.save()
 
